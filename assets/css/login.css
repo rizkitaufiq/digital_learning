@@ -1,0 +1,65 @@
+:root {
+    --default: #D9D9D9;
+    --primary: #969191;
+    --secondary: #FF6922;
+    --light: #EFFDF5;
+    --dark: #0E2E50;
+    --background: #F6F8BC;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container-background {
+    background: var(--background);
+    height: 100%;
+    margin: 0;
+    display: flex;
+}
+
+/* --------------------------------------------content-left------------------------------------ */
+.container-content-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    margin: 0;
+}
+
+.content-img {
+    width: 50%;
+    height: 50%;
+}
+
+.image {
+    margin-left: 25%;
+    max-width: 150%;
+    height: auto;
+}
+
+/* --------------------------------------------content-right------------------------------------ */
+.container-content-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    margin: 0;
+}
+
+.content-form {
+    margin-right: 25%;
+    width: 50%;
+    height: 50%;
+}
+
+.form-control{
+    width: 90%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
