@@ -29,14 +29,14 @@
             <div class="col-md-6 d-flex justify-content-center align-items-center right-box mt-5">
                     <div class="row align-items-center">
                         <div class="input-group m-2">
-                            <input type="text" class="form-control form-control-lg bg-white fs-6" style="border-radius: 12px;" placeholder="Username">
+                            <input type="text" class="form-control form-control-lg bg-white fs-6" style="border-radius: 12px;height:7.5vh" placeholder="Username">
                         </div>
                         <div class="input-group m-2">
-                            <input type="password" class="form-control form-control-lg bg-white fs-6" style="border-radius: 12px;" placeholder="Password">
+                            <input type="password" class="form-control form-control-lg bg-white fs-6" style="border-radius: 12px;height:7.5vh" placeholder="Password">
                         </div>
                         <div class="d-flex input-group m-2 justify-content-center align-items-center rounded-sm mt-3">
                             <!-- <button class="btn btn-lg btn-secondary w-50 fs-6" style="border-radius: 12px;">Login</button> -->
-                            <a href="<?= site_url('admin/beranda/page') ?>" class="btn btn-lg btn-secondary w-50 fs-6" style="border-radius: 12px; height:7.5vh">Login</a>
+                            <a href="<?= site_url('admin/beranda/page') ?>" class="btn btn-lg btn-secondary w-50 fs-8" style="border-radius: 15px; height:7.5vh">Login</a>
                         </div>
                     </div>
             </div>
