@@ -7,59 +7,54 @@
     --background: #F6F8BC;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
+body {
+    background: #F6F8BC;
 }
 
-.container-background {
-    background: var(--background);
-    height: 100%;
-    margin: 0;
-    display: flex;
+.box-area{
+    width: 930px;
 }
 
-/* --------------------------------------------content-left------------------------------------ */
-.container-content-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 50%;
-    margin: 0;
+/*------------ right content ------------*/
+
+.right-box{
+    padding: 40px 30px 40px 40px;
 }
 
-.content-img {
-    width: 50%;
-    height: 50%;
+/*------------ custom placeholder ------------*/
+
+::placeholder{
+    font-size: 16px;
 }
 
-.image {
-    margin-left: 25%;
-    max-width: 150%;
-    height: auto;
+.rounded-4{
+    border-radius: 20px;
+}
+.rounded-5{
+    border-radius: 30px;
 }
 
-/* --------------------------------------------content-right------------------------------------ */
-.container-content-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 50%;
-    margin: 0;
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px){
+
+     .box-area{
+        margin: 0 10px;
+
+     }
+     .left-box{
+        height: 100%;
+        overflow: hidden;
+     }
+     .right-box{
+        padding: 20px;
+     }
 }
 
-.content-form {
-    margin-right: 25%;
-    width: 50%;
-    height: 50%;
+.custom-input{
+    height: 55px;
 }
 
-.form-control{
-    width: 90%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+button{
+    height: 45px;
 }
-
