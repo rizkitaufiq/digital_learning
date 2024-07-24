@@ -112,6 +112,10 @@ p, a{
     p{
         margin: 1rem;
     }
+
+    .btn-custom{
+        margin-left: 1rem;
+    }
   
 }
 

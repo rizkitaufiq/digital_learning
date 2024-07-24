@@ -17,7 +17,7 @@ p, a{
 
 .box-area{
     margin:0;
-    padding: 20vh;
+    padding: 15vh;
     height: 50%;
     border: 1px solid black;
 }
@@ -46,6 +46,10 @@ p, a{
 
     .image-custom{
         display: none;
+    }
+
+    .btn-custom{
+        margin-left: 1rem;
     }
   
 }

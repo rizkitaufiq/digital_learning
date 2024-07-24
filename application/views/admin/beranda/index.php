@@ -47,7 +47,7 @@
                     
                     <a href="" class="active btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Beranda</a>
 
-                    <a href="<?= site_url('siswa/beranda/page') ?>" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Siswa</a>
+                    <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Siswa</a>
 
                     <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Nilai</a>
 
@@ -64,7 +64,10 @@
         </div>
 
         <div class="box-area mt-2 ">
-            <!-- <button class="btn btn-info w-50 m-2" style="border-radius: 25px; height:7.5vh">Logout</button> -->
+        
+        </div>
+        <div class="col-md-2">
+            <a href="<?= site_url('login/logout')?>" class="btn btn-secondary mt-4 btn-custom" style="border-radius: 10px; height:7vh">Logout</a>
         </div>
     </div>
 
