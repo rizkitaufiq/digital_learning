@@ -21,7 +21,7 @@
             <!-- Left Content -->
             <div class="col-md-6 d-flex justify-content-center align-items-center flex-column left-box mt-5">
                 <div class="featured-image mb-3">
-                    <img class="img-fluid" src="<?= base_url('assets/'); ?>image/login/icon_login.png" style="250px">
+                    <img class="img-fluid" src="<?= base_url('assets/'); ?>image/login/icon_login.png">
                 </div>
             </div>
 

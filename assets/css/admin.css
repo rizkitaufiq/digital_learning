@@ -1,0 +1,63 @@
+:root {
+    --default: #D9D9D9;
+    --primary: #969191;
+    --secondary: #FF6922;
+    --light: #EFFDF5;
+    --dark: #0E2E50;
+    --background: #F6F8BC;
+}
+
+p, a{
+    font-family: "Averia Libre", system-ui;
+}
+
+.container-header{
+    background: var(--background);
+}
+
+.box-area{
+    margin:0;
+    padding: 20vh;
+    height: 50%;
+    border: 1px solid black;
+}
+
+
+
+/*------------ For small screens------------*/
+
+@media only screen and (max-width: 768px){
+
+    .box-area{
+       margin: 0 10px;
+       overflow: hidden; 
+    }
+    .left-box{
+       height: 100%;
+       overflow: hidden;
+    }
+    .right-box{
+       padding: 20px;
+    }
+
+    .group-custom{
+        flex-wrap: wrap;
+    }
+
+    .image-custom{
+        display: none;
+    }
+  
+}
+
+.text-container {
+    position: relative;
+    /* padding-bottom: 100px; Sesuaikan dengan tinggi gambar */
+}
+.bottom-left-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 170px;
+    height: auto;
+}

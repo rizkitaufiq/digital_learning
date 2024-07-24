@@ -4,7 +4,6 @@
     --secondary: #FF6922;
     --light: #EFFDF5;
     --dark: #0E2E50;
-    --background: #F6F8BC;
 }
 
 body {
@@ -49,10 +48,6 @@ body {
      .right-box{
         padding: 20px;
      }
-}
-
-.custom-input{
-    height: 55px;
 }
 
 button{
