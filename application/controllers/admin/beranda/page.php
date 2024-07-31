@@ -8,6 +8,7 @@ class Page extends CI_Controller {
 		if ($this->session->userdata('role') != 'admin') {
             redirect('login');
         }
+		$this->load->view('admin/body/header');
 		$this->load->view('admin/beranda/index');
 	}
 }
