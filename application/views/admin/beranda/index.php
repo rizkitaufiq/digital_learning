@@ -2,7 +2,7 @@
 
         </div>
         <div class="col-md-2">
-            <a href="<?= site_url('login/logout') ?>" class="btn btn-secondary mt-4 btn-custom" style="border-radius: 10px; height:7vh">Logout</a>
+            <a href="<?= site_url('Login/Logout') ?>" class="btn btn-secondary mt-4 btn-custom" style="border-radius: 10px; height:7vh">Logout</a>
         </div>
         </div>
 

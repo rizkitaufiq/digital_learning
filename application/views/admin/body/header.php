@@ -48,9 +48,9 @@
 
                     <?php $menu    = $this->uri->segment(2); ?>
                     
-                    <a href="<?= site_url('admin/beranda/page') ?>" class="<?php if ($menu == 'beranda') {echo "active";} ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Beranda</a>
+                    <a href="<?= site_url('Admin/Beranda/Page') ?>" class="<?php if ($menu == 'beranda') {echo "active";} ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Beranda</a>
 
-                    <a href="<?= site_url('admin/siswa/page') ?>" class="<?php if ($menu == 'siswa') {echo "active";} ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Siswa</a>
+                    <a href="<?= site_url('Admin/Siswa/Page') ?>" class="<?php if ($menu == 'siswa') {echo "active";} ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Siswa</a>
 
                     <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Nilai</a>
 

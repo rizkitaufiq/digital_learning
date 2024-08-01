@@ -18,7 +18,7 @@ class Page extends CI_Controller {
 		$this->load->view('admin/siswa/index');
 	}
 
-    public function fetch_data() {
+    public function Fetch_Data() {
         $limit = $this->input->post('limit');
         $start = $this->input->post('start');
         $search = $this->input->post('search');

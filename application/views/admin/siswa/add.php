@@ -29,7 +29,7 @@
                     <h4>Tambah Siswa</h4>
                 </div>
 
-                <form action="<?= site_url('admin/siswa/add/process') ?>" method="post">
+                <form action="<?= site_url('Admin/Siswa/Add/Process') ?>" method="post">
 
                     <div class="form-group">
 

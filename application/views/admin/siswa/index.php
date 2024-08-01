@@ -2,7 +2,7 @@
     <div class="col-md-12 d-flex justify-content-center align-items-center text-center">
     <h2>Daftar Siswa</h2>
     </div>
-    <a href="<?= site_url('admin/siswa/add') ?>" class="btn btn-info d-flex align-items-center justify-content-center text-center m-2" style="border-radius: 24px; width:25vh;height:7vh;font-weight:bold;">+ Tambah Siswa</a>
+    <a href="<?= site_url('Admin/Siswa/Add') ?>" class="btn btn-info d-flex align-items-center justify-content-center text-center m-2" style="border-radius: 24px; width:25vh;height:7vh;font-weight:bold;">+ Tambah Siswa</a>
     <input type="text" id="search" class="form-control mb-3" style="border: 1px solid #D9D9D9" placeholder="Search...">
     <table class="table table-bordered">
         <thead>
@@ -38,7 +38,7 @@
 
             function load_data(limit, start, search) {
                 $.ajax({
-                    url: "<?php echo base_url(); ?>admin/siswa/page/fetch_data",
+                    url: "<?php echo base_url(); ?>Admin/Siswa/Page/Fetch_Data",
                     method: "POST",
                     data: {limit: limit, start: start, search: search},
                     dataType: "json",
@@ -55,8 +55,8 @@
                             html += '<td>' + data.data[i].agama + '</td>';
                             html += '<td>' + data.data[i].alamat + '</td>';
                             html += '<td>';
-                            html += '<a href="<?php echo base_url('admin/siswa/update/'); ?>' + data.data[i].id_siswa + '" class="btn btn-info fas fa-pencil btn-sm"></a> ';
-                            html += '<a href="<?php echo base_url('admin/siswa/delete/process/'); ?>' + data.data[i].id_siswa + '" class="btn btn-info fas fa-trash btn-sm" onclick="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')"></a>'; 
+                            html += '<a href="<?php echo base_url('Admin/Siswa/Update/'); ?>' + data.data[i].id_siswa + '" class="btn btn-info fas fa-pencil btn-sm"></a> ';
+                            html += '<a href="<?php echo base_url('Admin/Siswa/Delete/Process/'); ?>' + data.data[i].id_siswa + '" class="btn btn-info fas fa-trash btn-sm" onclick="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')"></a>'; 
                             html += '</td>';
                             html += '</tr>';
                         }
@@ -89,25 +89,6 @@
                 start = (page - 1) * limit;
                 load_data(limit, start, search);
             });
-
-            // Delete
-            // $(document).on('click', '.delete', function() {
-            //     let id = $(this).data('id');
-            //     if (confirm('Are you sure you want to delete this item?')) {
-            //         $.ajax({
-            //             url: "<?php echo base_url(); ?>admin/siswa/delete",
-            //             method: "POST",
-            //             data: {id: id},
-            //             success: function(data) {
-            //                 if (data.status) {
-            //                     load_data(limit, start, search);
-            //                 } else {
-            //                     alert('Failed to delete item');
-            //                 }
-            //             }
-            //         });
-            //     }
-            // });
 
         });
 </script>

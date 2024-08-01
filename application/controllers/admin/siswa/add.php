@@ -9,10 +9,10 @@ class Add extends CI_Controller
 		if ($this->session->userdata('role') != 'admin') {
 			redirect('login');
 		}
-		$this->load->view('admin/siswa/add');
+		$this->load->view('Admin/Siswa/Add');
 	}
 
-	public function process()
+	public function Process()
 	{
 
 		$this->form_validation->set_message('required', 'harap isi {field}.');
@@ -62,7 +62,7 @@ class Add extends CI_Controller
 
 			$this->db->insert('siswa', $data);
 
-			redirect('admin/siswa/page');
+			redirect('Admin/Siswa/Page');
 		}
 	}
 }

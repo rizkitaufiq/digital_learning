@@ -18,7 +18,7 @@ class Login extends CI_Controller {
 	
 	}
 
-	public function auth() {
+	public function Auth() {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
@@ -45,7 +45,7 @@ class Login extends CI_Controller {
         redirect('login');
     }
 
-    public function logout() {
+    public function Logout() {
         $this->session->sess_destroy();
         redirect('login');
     }

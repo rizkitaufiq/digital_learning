@@ -8,7 +8,7 @@ class Delete extends CI_Controller {
         $this->load->model('Siswa_model');
     }
 
-    public function process($id_siswa)
+    public function Process($id_siswa)
 	{
         $id = array(
             "id_siswa" => $id_siswa

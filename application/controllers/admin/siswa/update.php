@@ -69,6 +69,6 @@ class Update extends CI_Controller {
         $this->db->where('id_siswa', $id_siswa);
         $this->db->update('siswa', $data);
     
-        redirect('admin/siswa/page');
+        redirect('Admin/Siswa/Page');
     }
 }
