@@ -25,9 +25,10 @@
     <div id="pagination-links"></div>
     <div id="loading" class="loading d-none">Loading...</div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="<?= base_url('assets/'); ?> js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -66,7 +67,7 @@
                         let total_pages = Math.ceil(data.total_records / limit);
                         for (let i = 1; i <= total_pages; i++) {
                             pagination += '<ul class="pagination">';
-                            pagination += '<li class="page-item">';
+                            pagination += '<li class="page-item" style="cursor:pointer;">';
                             pagination += '<a class="page-link m-1" style="color:#000;" data-page="' + i + '">' + i + '</a>';
                             pagination += '</li>';
                             pagination += '</ul>';

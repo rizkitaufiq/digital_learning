@@ -47,21 +47,36 @@
                 <div class="btn-group group-custom">
 
                     <?php $menu    = $this->uri->segment(2); ?>
-                    
-                    <a href="<?= site_url('Admin/Beranda/Page') ?>" class="<?php if ($menu == 'beranda') {echo "active";} ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Beranda</a>
 
-                    <a href="<?= site_url('Admin/Siswa/Page') ?>" class="<?php if ($menu == 'siswa') {echo "active";} ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Siswa</a>
+                    <a href="<?= site_url('Admin/Beranda/Page') ?>" class="<?php if ($menu == 'Beranda') {
+                                                                                echo "active";
+                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Beranda</a>
+
+                    <a href="<?= site_url('Admin/Siswa/Page') ?>" class="<?php if ($menu == 'Siswa') {
+                                                                                echo "active";
+                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Siswa</a>
 
                     <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Nilai</a>
 
-                    <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Materi</a>
+                    <div class="<?php if ($menu == 'Materi') {
+                                    echo "active";
+                                } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2 dropdown" style="border-radius: 25px; height:7vh;" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
+                        <a class="d-flex align-items-center justify-content-center text-center" style="border-radius: 25px; height:7vh;">
+                            Materi
+                        </a>
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top:1px;width: 195px;">
+                        <a href="<?= site_url('Admin/Materi/MateriTeks/Page') ?>" class="dropdown-item">Materi Teks</a>
+                        <a href="<?= site_url('Admin/Materi/LatihanSoal/Page') ?>" class="dropdown-item">Latihan Soal</a>
+                    </div>
+
 
                     <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Materi Video</a>
 
                     <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Progress Belajar</a>
 
                     <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Praktikum Siswa</a>
-                    
+
                 </div>
             </div>
         </div>

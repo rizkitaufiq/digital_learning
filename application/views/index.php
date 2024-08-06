@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    <!-- Main Content -->
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
 
         <div class="row box-area">
@@ -45,7 +44,6 @@
 
                         <div class="d-flex input-group m-2 justify-content-center align-items-center rounded-sm mt-3">
                             <button type="submit" class="btn btn-lg btn-secondary w-50 fs-6" style="border-radius: 12px;">Login</button>
-                            <!-- <a href="<?= site_url('admin/beranda/page') ?>" class="btn btn-lg btn-secondary w-50 fs-8" style="border-radius: 15px; height:7.5vh">Login</a> -->
                         </div>
                     </div>
                 </form>
