@@ -50,8 +50,6 @@ class MateriBab extends CI_Controller {
 
 		$this->pagination->initialize($config);
 		$param['links']			= $this->pagination->create_links();
-        // $param['data_bab'] = $this->Bab_model->Get_Bab_ID($id_bab)->result();
-		// $param['data_materiteks'] = $this->MateriTeks_model->Get_Materi_ID($id_bab)->result();
 
 		if ($this->session->userdata('role') != 'admin') {
             redirect('login');
@@ -59,5 +57,4 @@ class MateriBab extends CI_Controller {
 		$this->load->view('admin/body/header');
 		$this->load->view('admin/materi/materiteks/materi_bab', $param);
 		}
-
 }

@@ -29,7 +29,7 @@
                     <h4>Tambah Siswa</h4>
                 </div>
 
-                <form action="<?= site_url('admin/siswa/update/process') ?>" method="post">
+                <form action="<?= site_url('Admin/Siswa/Update/Process') ?>" method="post">
                     <?php foreach ($data as $item) { ?>
                         <input type="hidden" name="id_siswa" value="<?php echo $item->id_siswa ?>" placeholder="Nama Siswa :" class="form-control mb-2" style="background: #F9FAC7 ; border-radius: 0; border: 1px solid #000000">
                         <div class="form-group">

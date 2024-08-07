@@ -46,6 +46,32 @@ a{
     background: white;
     border-radius: 5px;
 }
+
+.custom-file-input {
+    display: block;
+    width: 100px; 
+    height: 40px; 
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.custom-file-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px; 
+    height: 100px; 
+    background-color: white;
+    color: black;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+}
+
 /*------------ For small screens------------*/
 
 @media only screen and (max-width: 768px){

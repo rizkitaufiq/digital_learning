@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
 <body>
     <div class="p-md-2 second-bg mt-3">
         <div class="text-dark">
@@ -77,7 +68,7 @@
                                 <input name="id_bab" type="hidden" class="form-control" value="<?php echo $item->id_bab ?>">
                             <?php } ?>
                             <div class="form-group mt-2">
-                                <label for="nama">Judul Materi</label>
+                                <label for="judul">Judul Materi</label>
                                 <input name="judul" type="text" class="form-control" style="border: 1px solid black;border-radius:0;" required>
                             </div>
 
@@ -111,7 +102,7 @@
                             <input id="bab_id" name="bab_id" type="hidden" class="form-control">
 
                             <div class="form-group mt-2">
-                                <label for="nama">Judul Materi</label>
+                                <label for="judul">Judul Materi</label>
                                 <input name="judul" id="judul" type="text" class="form-control" style="border: 1px solid black;border-radius:0;">
                             </div>
 

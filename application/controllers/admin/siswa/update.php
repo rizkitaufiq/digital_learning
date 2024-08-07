@@ -18,7 +18,7 @@ class Update extends CI_Controller {
 		$this->load->view('admin/siswa/update', $param);
 	}
 
-    public function process()
+    public function Process()
     {
         $id_siswa		= $this->input->post('id_siswa');
 
