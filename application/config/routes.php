@@ -1,12 +1,18 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 $route['default_controller'] = 'Login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+// -----------------------------------------Admin----------------------------------------------------------
+// Siswa---------------------------------------------------------------------------------------------------
 $route['Admin/Siswa/Update/(:num)'] = 'Admin/Siswa/Update/index/$1';
+
+// Materi---------------------------------------------------------------------------------------------------
 $route['Admin/Materi/MateriTeks/MateriBab/(:num)'] = 'Admin/Materi/MateriTeks/MateriBab/index/$1';
 $route['Admin/Materi/MateriTeks/MateriBab/(:num)/(:num)'] = 'Admin/Materi/MateriTeks/MateriBab/index/$1/$1';
 $route['Admin/Materi/MateriTeks/MateriBab'] = 'Admin/Materi/Materiteks/MateriBab/index';
 
+$route['Admin/Materi/LatihanSoal/Page/(:num)'] = 'Admin/Materi/LatihanSoal/Page/index/$1';
+$route['Admin/Materi/LatihanSoal/Update/(:num)'] = 'Admin/Materi/LatihanSoal/Update/index/$1';

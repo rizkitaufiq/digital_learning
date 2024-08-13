@@ -71,8 +71,8 @@
                     </div>
 
                     <a href="<?= site_url('Admin/MateriVideo/Page') ?>" class="<?php if ($menu == 'MateriVideo') {
-                                                                                echo "active";
-                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Materi Video</a>
+                                                                                    echo "active";
+                                                                                } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Materi Video</a>
 
                     <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Progress Belajar</a>
 

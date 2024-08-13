@@ -1,17 +1,19 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Page extends CI_Controller {
+class Page extends CI_Controller
+{
 
-	public function __construct() {
-        parent::__construct();
-		$this->load->model('MateriVideo_model');
-    }
-
-    public function index()
+	public function __construct()
 	{
-        $start					= $this->uri->segment(4);
-        $limit                  = 5;
+		parent::__construct();
+		$this->load->model('MateriVideo_model');
+	}
+
+	public function index()
+	{
+		$start					= $this->uri->segment(4);
+		$limit                  = 5;
 
 		$config['full_tag_open'] = '<div class="pagination mt-2">';
 		$config['full_tag_close'] = '</div>';
@@ -44,14 +46,14 @@ class Page extends CI_Controller {
 		$config['per_page']		= $limit;
 
 		$param['data']			= $this->MateriVideo_model->Get_MateriVideo($config['per_page'], $start)->result();
-		
+
 		$this->pagination->initialize($config);
 		$param['links']			= $this->pagination->create_links();
 
 		if ($this->session->userdata('role') != 'admin') {
-            redirect('login');
-        }
+			redirect('login');
+		}
 		$this->load->view('admin/body/header');
 		$this->load->view('admin/materivideo/index', $param);
-		}
+	}
 }
