@@ -16,3 +16,7 @@ $route['Admin/Materi/MateriTeks/MateriBab'] = 'Admin/Materi/Materiteks/MateriBab
 
 $route['Admin/Materi/LatihanSoal/Page/(:num)'] = 'Admin/Materi/LatihanSoal/Page/index/$1';
 $route['Admin/Materi/LatihanSoal/Update/(:num)'] = 'Admin/Materi/LatihanSoal/Update/index/$1';
+
+// -----------------------------------------Siswa----------------------------------------------------------
+// Materi---------------------------------------------------------------------------------------------------
+$route['Siswa/Materi/Detail/(:num)'] = 'Siswa/Materi/Detail/index/$1';

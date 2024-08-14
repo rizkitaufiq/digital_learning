@@ -11,6 +11,45 @@
 
 }
 
+.color-1{
+    background-color: #FFF1F1;
+}
+
+.color-2{
+    background-color: #FBF6CF;
+}
+
+.color-3{
+    background-color: #E5E5E3;
+}
+
+.color-4{
+    background-color: #A5D2EB;
+}
+
+.color-5{
+    background-color: #E99090;
+}
+
+.color-6{
+    background-color: #D7E4C7;
+}
+
+.color-7{
+    background-color: #FFE1B4;
+}
+
+.color-8{
+    background-color: #E7B5FF;
+}
+
+.color-9{
+    background-color: #B0FFE3;
+}
+
+.color-10{
+    background-color: #B7C3E1;
+}
 
 p, a{
     font-family: "Averia Libre", system-ui;

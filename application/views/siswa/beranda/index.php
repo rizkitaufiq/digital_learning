@@ -64,7 +64,7 @@
             <div class="mt-1">
                 <div class="d-flex gap-2 justify-content-start">
                     <div class="">
-                        <a href="#" class="text-decoration-none text-reset">
+                        <a href="<?= site_url('Siswa/Materi/Page') ?>" class="text-decoration-none text-reset">
                             <div class="box-icon bg-pink">
                                 <img src="<?= base_url('assets/image/siswa/materi_teks.png') ?>" class="img-fluid" style="height: 50px; width:50px;">
                                 <p class="m-0 font-custom">Materi Teks</p>

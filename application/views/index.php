@@ -29,11 +29,11 @@
                 <form action="<?= site_url('login/auth'); ?>" method="post">
                     <div class="row align-items-center">
                         <div class="d-flex justify-content-center align-items-center m-2">
-                        <?php if ($this->session->flashdata('error')) : ?>
-                            <div class="alert alert-danger w-100"><?php echo $this->session->flashdata('error'); ?></div>
-                        <?php endif; ?>
+                            <?php if ($this->session->flashdata('error')) : ?>
+                                <div class="alert alert-danger w-100"><?php echo $this->session->flashdata('error'); ?></div>
+                            <?php endif; ?>
                         </div>
-                        
+
                         <div class="input-group m-2">
                             <input type="text" name="username" class="form-control form-control-lg bg-white fs-6" style="border-radius: 12px;height:7.5vh" placeholder="Username" required="">
                         </div>

@@ -1,31 +1,34 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Page extends CI_Controller {
+class Page extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model('Siswa_model');
     }
 
     public function index()
-	{
+    {
 
-		if ($this->session->userdata('role') != 'admin') {
+        if ($this->session->userdata('role') != 'admin') {
             redirect('login');
         }
-		$this->load->view('admin/body/header');
-		$this->load->view('admin/siswa/index');
-	}
+        $this->load->view('admin/body/header');
+        $this->load->view('admin/siswa/index');
+    }
 
-    public function Fetch_Data() {
+    public function Fetch_Data()
+    {
         $limit = $this->input->post('limit');
         $start = $this->input->post('start');
         $search = $this->input->post('search');
-        
+
         $data = $this->Siswa_model->Get_Siswa_Paginate($limit, $start, $search);
         $total_records = $this->Siswa_model->Count_Siswa($search);
-        
+
         $output = array(
             'total_records' => $total_records,
             'data' => $data

@@ -1,13 +1,13 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Page extends CI_Controller {
-
-    public function index()
+class Page extends CI_Controller
+{
+	public function index()
 	{
 		if ($this->session->userdata('role') != 'siswa') {
-            redirect('login');
-        }
+			redirect('login');
+		}
 		$this->load->view('siswa/beranda/index');
 	}
 }
