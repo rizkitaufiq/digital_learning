@@ -89,34 +89,118 @@
                 <div class="mx-auto" style="border-top: 1px solid black;width:96%;"></div>
 
                 <div class="p-4 m-4" style="height: auto;">
-                    <form action="" method="post">
+                    <form action="<?php site_url('Siswa/Materi/LatihanSoal/Add') ?>" method="post">
                         <div class="row">
 
                             <!-- left -->
-                            <div class="col-md-6">
+                            <?php if (!empty($data)) { ?>
+                                <div class="col-md-6">
 
-                                <?php $no = 1 ?>
-                                <?php foreach (array_slice($data, 0, 5) as $item) : ?>
-                                    <div class="row mb-4">
-                                        <div class="form-group">
-                                            <div class="d-flex">
-                                                <p style="margin-right: 0.3rem;"><?php echo $no++ ?>.</p>
-                                                <p class="mb-2"><?php echo $item->soal ?></p>
+                                    <?php $no = 1 ?>
+
+                                    <?php foreach (array_slice($data, 0, 5) as $item) : ?>
+                                        <div class="row mb-4">
+                                            <div class="form-group">
+                                                <div class="d-flex">
+                                                    <p style="margin-right: 0.3rem;"><?php echo $no++ ?>.</p>
+                                                    <p class="mb-2"><?php echo $item->soal ?></p>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <?php if ($item->format == 'center') { ?>
+                                            <?php if ($item->format == 'center') { ?>
+
+                                                <input type="hidden" name="id_soal" value="<?php echo $item->id_soal ?>" class="m-2" required>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <input type="radio" name="jawaban" value="a" class="m-2" required>
+                                                            <p class="m-1" name=" opsi_a"><?php echo $item->opsi_a ?> </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <input type="radio" name="jawaban" value="b" class="m-2" required>
+                                                            <p class="m-1" name=" opsi_b"><?php echo $item->opsi_b ?> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <input type="radio" name="jawaban" value="c" class="m-2">
+                                                            <p class="m-1" name=" opsi_c"><?php echo $item->opsi_c ?> </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <input type="radio" name="jawaban" value="d" class="m-2">
+                                                            <p class="m-1" name=" opsi_d"><?php echo $item->opsi_d ?> </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?php } else { ?>
+                                                <div class="d-flex row">
+                                                    <div class="form-group">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <input type="radio" name="jawaban" value="a" class="m-2" required>
+                                                            <p class="m-1" name=" opsi_a"><?php echo $item->opsi_a ?> </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <input type="radio" name="jawaban" value="b" class="m-2" required>
+                                                            <p class="m-1" name=" opsi_b"><?php echo $item->opsi_b ?> </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <input type="radio" name="jawaban" value="c" class="m-2">
+                                                            <p class="m-1" name=" opsi_c"><?php echo $item->opsi_c ?> </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="d-flex justify-content-start align-items-center">
+                                                            <input type="radio" name="jawaban" value="d" class="m-2">
+                                                            <p class="m-1" name=" opsi_d"><?php echo $item->opsi_d ?> </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+
+                                <!-- right -->
+                                <div class="col-md-6">
+                                    <?php $no = 6 ?>
+                                    <?php foreach (array_slice($data, 5) as $item) : ?>
+                                        <div class="row mb-4">
+                                            <div class="form-group">
+                                                <div class="d-flex">
+                                                    <p style="margin-right: 0.3rem;"><?php echo $no++ ?>.</p>
+                                                    <p class="mb-2"><?php echo $item->soal ?></p>
+                                                </div>
+                                            </div>
+
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <div class="d-flex justify-content-start align-items-center">
-                                                        <input type="radio" name="jawaban" value="a" class="m-2" required>
+                                                        <input type="radio" multiple name="jawaban" value="a" class="m-2" required>
                                                         <p class="m-1" name=" opsi_a"><?php echo $item->opsi_a ?> </p>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <div class="d-flex justify-content-start align-items-center">
-                                                        <input type="radio" name="jawaban" value="b" class="m-2" required>
+                                                        <input type="radio" multiple name="jawaban" value="b" class="m-2" required>
                                                         <p class="m-1" name=" opsi_b"><?php echo $item->opsi_b ?> </p>
                                                     </div>
                                                 </div>
@@ -125,7 +209,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <div class="d-flex justify-content-start align-items-center">
-                                                        <input type="radio" name="jawaban" value="c" class="m-2">
+                                                        <input type="radio" multiple name="jawaban" value="c" class="m-2">
                                                         <p class="m-1" name=" opsi_c"><?php echo $item->opsi_c ?> </p>
                                                     </div>
                                                 </div>
@@ -137,99 +221,31 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php } else { ?>
-                                            <div class="d-flex row">
-                                                <div class="form-group">
-                                                    <div class="d-flex justify-content-start align-items-center">
-                                                        <input type="radio" name="jawaban" value="a" class="m-2" required>
-                                                        <p class="m-1" name=" opsi_a"><?php echo $item->opsi_a ?> </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="d-flex justify-content-start align-items-center">
-                                                        <input type="radio" name="jawaban" value="b" class="m-2" required>
-                                                        <p class="m-1" name=" opsi_b"><?php echo $item->opsi_b ?> </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="d-flex justify-content-start align-items-center">
-                                                        <input type="radio" name="jawaban" value="c" class="m-2">
-                                                        <p class="m-1" name=" opsi_c"><?php echo $item->opsi_c ?> </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="d-flex justify-content-start align-items-center">
-                                                        <input type="radio" name="jawaban" value="d" class="m-2">
-                                                        <p class="m-1" name=" opsi_d"><?php echo $item->opsi_d ?> </p>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        <?php } ?>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-
-                            <!-- right -->
-                            <div class="col-md-6">
-                                <?php $no = 6 ?>
-                                <?php foreach (array_slice($data, 5) as $item) : ?>
-                                    <div class="row mb-4">
-                                        <div class="form-group">
-                                            <div class="d-flex">
-                                                <p style="margin-right: 0.3rem;"><?php echo $no++ ?>.</p>
-                                                <p class="mb-2"><?php echo $item->soal ?></p>
-                                            </div>
                                         </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <div class="d-flex justify-content-start align-items-center">
-                                                    <input type="radio" name="jawaban" value="a" class="m-2" required>
-                                                    <p class="m-1" name=" opsi_a"><?php echo $item->opsi_a ?> </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="d-flex justify-content-start align-items-center">
-                                                    <input type="radio" name="jawaban" value="b" class="m-2" required>
-                                                    <p class="m-1" name=" opsi_b"><?php echo $item->opsi_b ?> </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <div class="d-flex justify-content-start align-items-center">
-                                                    <input type="radio" name="jawaban" value="c" class="m-2">
-                                                    <p class="m-1" name=" opsi_c"><?php echo $item->opsi_c ?> </p>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="d-flex justify-content-start align-items-center">
-                                                    <input type="radio" name="jawaban" value="d" class="m-2">
-                                                    <p class="m-1" name=" opsi_d"><?php echo $item->opsi_d ?> </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-
+                                    <?php endforeach; ?>
+                                </div>
+                        </div>
+                        <div class="d-flex justify-content-end align-items-end mt-2">
+                            <button type="submit" class="bg-yellow" style="color:black;border:none;">
+                                <p>Selesai!</p>
+                            </button>
                         </div>
                     </form>
 
-                    <div class="d-flex justify-content-end align-items-end mt-2">
-                        <button type="submit" class="bg-yellow" style="color:black;border:none;">
-                            <p>Selesai!</p>
-                        </button>
+
+
+                <?php } else { ?>
+
+                    <div class="row">
+                        <div class="d-flex justify-content-start align-item-center">
+                            <p>Soal Belum ditambahkan</p>
+
+                        </div>
                     </div>
 
-                    <!-- <div class="row mt-4">
+                <?php } ?>
+
+                <!-- <div class="row mt-4">
                         <div class="d-flex justify-content-center align-items-center">
                             <h3>Good Job !</h3>
                         </div>
@@ -255,8 +271,10 @@
                 </div>
             </div>
 
+
         </div>
     </div>
+
 </body>
 
 </html>
