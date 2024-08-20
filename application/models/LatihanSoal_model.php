@@ -27,4 +27,14 @@ class LatihanSoal_model extends CI_Model
         $this->db->from('latihan_soal');
         return $this->db->get();
     }
+
+    public function Get_SoalBab_ID($id_bab)
+    {
+        $this->db->select('*');
+        $this->db->from('latihan_soal');
+        $this->db->join('bab', 'latihan_soal.bab_id = bab.id_bab');
+        $this->db->where('bab_id', $id_bab);
+        $query =  $this->db->get();
+        return $query->result();
+    }
 }

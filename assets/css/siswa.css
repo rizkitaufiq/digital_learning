@@ -55,6 +55,10 @@ p, a{
     font-family: "Averia Libre", system-ui;
 }
 
+input:disabled {
+    background-color: var(--background);  
+    border-color: var(--background); 
+}
 .box-content {
     border: 1px solid white;
     padding: 20px;

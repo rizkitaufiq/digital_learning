@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
 
-    <title>Siswa | Materi</title>
+    <title>Siswa | Latihan Soal</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/blog/">
 
@@ -75,11 +75,11 @@
                 <div class="row">
                     <div class="d-flex justify-content-start align-items-start">
                         <div class="mt-4" style="margin-left: 1rem;">
-                            <a style="border-bottom:2px solid black; background-color: transparent;">Materi</a>
+                            <a href="<?= site_url('Siswa/Materi/Page') ?>" style="text-decoration:none;color: black;">Materi</a>
                         </div>
 
                         <div class="mt-4" style="margin-left: 1rem;">
-                            <a href="<?= site_url('Siswa/Materi/LatihanSoal') ?>" style="text-decoration:none;color: black;">Latihan Soal</a>
+                            <a href="" style="text-decoration:none; border-bottom:2px solid black; background-color: transparent;color: black;">Latihan Soal</a>
                         </div>
                     </div>
                     <div class="mx-auto" style="border-top: 1px solid black;width:96%;"></div>
@@ -87,35 +87,18 @@
                     <?php
                     $data_materi = [];
 
-                    foreach ($data as $item) {
-                        $data_materi[$item->bab][] = [
-                            'judul' => $item->judul,
-                            'id_materi' => $item->id_materi,
-                        ];
-                    }
-
                     $colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7', 'color-8', 'color-9', 'color-10'];
                     $color_index = 0;
 
                     ?>
-                    <div class="row m-1">
-                        <?php foreach ($data_materi as $bab => $materis) { ?>
-                            <div class="col-sm-6 col-md-4 mt-4">
-                                <div class="d-flex justify-content-start align-items-start" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
-                                    <a class="btn <?php echo $colors[$color_index++]; ?> d-flex justify-content-between align-items-center w-100" style="border-radius: 25px;">
-                                        <?php echo $bab ?>
-                                        <i class="fas fa-chevron-down"></i>
-                                    </a>
-
-                                </div>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top:1px;width: 30%;">
-                                    <?php foreach ($materis as $materi) { ?>
-                                        <a href="<?php echo base_url('Siswa/Materi/Detail/') . $materi['id_materi'] ?>" class="dropdown-item"><?php echo $materi['judul'] ?></a>
-                                    <?php } ?>
+                    <div class="row">
+                        <?php foreach ($data as $item) { ?>
+                            <div class="col-4 mt-4">
+                                <div class="m-2">
+                                    <a href="<?php echo base_url('Siswa/Materi/LatihanSoal/Soal/') . $item->id_bab ?>" class="btn <?php echo $colors[$color_index++]; ?> d-flex justify-content-center align-items-center text-center w-100" style="height:10vh;border-radius:10px;"><?php echo $item->bab ?></a>
                                 </div>
                             </div>
                         <?php } ?>
-
                     </div>
                 </div>
             </div>
