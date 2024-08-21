@@ -93,21 +93,54 @@
 
                 <div class="p-4 m-4" style="height: auto;">
 
-                    <div class="row d-flex">
-                        <!-- <?php foreach ($data as $item) { ?>
-                            <div class="col-md-3 d-flex align-items-stretch">
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div class="<?php echo $colors[$color_index++]; ?> d-flex justify-content-center align-items-center text-center w-75 mb-5" style="border-radius: 25px;">
-                                        <p class="m-1"><?php echo $item->judul ?></p>
-                                    </div>
-                                    <div>
-                                        <a class="mt-2" href="<?php echo base_url('Siswa/MateriVideo/Detail/') . $item->id_video ?>" id="MateriVideo"><img src="<?= base_url('assets/image/siswa/video.png') ?>"></a>
-                                    </div>
+                    <?php foreach ($data as $item) { ?>
+                        <div class="row d-flex">
+
+                            <div class="row d-flex mb-2">
+                                <div class="d-flex justify-content-start" style="width: 40%;">
+                                    <p class="m-0" style="text-align: left;">Praktikum <?php echo $item->praktikum ?></p>
+                                </div>
+
+                                <div class="d-flex justify-content-center" style="width: 30%;">
+                                    <p class="m-0" style="text-align: left;">Unggah File</p>
+                                </div>
+
+                                <div class="d-flex justify-content-center" style="width: 30%;">
+                                    <p class="m-0" style="text-align: left;">Status</p>
                                 </div>
                             </div>
 
-                        <?php } ?> -->
-                    </div>
+                            <div class="box-content bg-pink mb-4" style="border: 1px solid #FADEDE ;border-radius: 25px;">
+                                <div class="row d-flex">
+                                    <div class="d-flex justify-content-start" style="width: 40%;">
+                                        <div class="mt-3">
+                                            <p class="m-0" style="text-align: left;"><?php echo $item->soal ?></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-start" style="width: 30%;">
+                                        <div class="mt-3">
+                                            <form action="<?php echo site_url('Siswa/Praktikum/Add/Process') ?>" method="post" enctype="multipart/form-data">
+                                                <div class="d-flex flex-column justify-content-start">
+                                                    <input type="hidden" name="id_praktikum" value="<?php echo $item->id_praktikum ?>">
+                                                    <input name="file_praktikum" type="file" accept="application/pdf">
+                                                    <button class="btn btn-secondary w-25 mt-2 p-1" type="submit">Kirim</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center" style="width: 30%;">
+                                        <div class="mt-3">
+                                            <p class="m-0">Completed</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    <?php } ?>
 
                 </div>
 

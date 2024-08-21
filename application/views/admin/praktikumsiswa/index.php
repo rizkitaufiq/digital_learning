@@ -2,8 +2,8 @@
     <div class="col-md-12 d-flex justify-content-center align-items-center text-center mt-4">
         <h2>Hasil Praktikum Siswa</h2>
     </div>
-    <button class="btn btn-info d-flex align-items-center justify-content-center text-center m-2" style="border-radius: 24px; width:30;font-weight:bold;" data-toggle="modal" data-target="#AddModal">+ Tambah Praktikum</button>
-    <input type="text" id="search" class="form-control mb-3" style="border: 1px solid #D9D9D9" placeholder="Search...">
+    <button class="btn btn-info d-flex align-items-center justify-content-center text-center mb-4" style="border-radius: 24px; width:30;font-weight:bold;" data-toggle="modal" data-target="#AddModal">+ Tambah Praktikum</button>
+    <!-- <input type="text" id="search" class="form-control mb-3" style="border: 1px solid #D9D9D9" placeholder="Search..."> -->
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -54,7 +54,7 @@
 <script src="<?= base_url('assets/'); ?> js/bootstrap.bundle.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- <script>
+<script>
     $(document).ready(function() {
         let limit = 5;
         let start = 0;
@@ -63,7 +63,7 @@
 
         function load_data(limit, start, search) {
             $.ajax({
-                url: "<?php echo base_url(); ?>Admin/Siswa/Page/Fetch_Data",
+                url: "<?php echo base_url(); ?>Admin/PraktikumSiswa/Page/Fetch_Data",
                 method: "POST",
                 data: {
                     limit: limit,
@@ -76,16 +76,13 @@
                     for (let i = 0; i < data.data.length; i++) {
                         html += '<tr>';
                         html += '<td>' + data.data[i].nama + '</td>';
-                        html += '<td>' + data.data[i].nisn + '</td>';
                         html += '<td>' + data.data[i].kelas + '</td>';
-                        html += '<td>' + data.data[i].tempat_lahir + '</td>';
-                        html += '<td>' + data.data[i].tanggal_lahir + '</td>';
-                        html += '<td>' + data.data[i].jenis_kelamin + '</td>';
-                        html += '<td>' + data.data[i].agama + '</td>';
-                        html += '<td>' + data.data[i].alamat + '</td>';
+                        html += '<td>' + data.data[i].praktikum + '</td>';
+                        html += '<td>' + data.data[i].tanggal + '</td>';
+                        html += '<td>' + data.data[i].waktu + '</td>';
                         html += '<td>';
-                        html += '<a href="<?php echo base_url('Admin/Siswa/Update/'); ?>' + data.data[i].id_siswa + '" class="btn btn-info fas fa-pencil btn-sm"></a> ';
-                        html += '<a href="<?php echo base_url('Admin/Siswa/Delete/Process/'); ?>' + data.data[i].id_siswa + '" class="btn btn-info fas fa-trash btn-sm" onclick="return confirm(\'Apakah Anda yakin ingin menghapus data ini?\')"></a>';
+                        html += '<a href="<?php echo base_url('Admin/PraktikumSiswa/Page/ViewPDF/'); ?>' + data.data[i].id_praktikum_siswa + '" class="btn btn-info fas fa-eye btn-sm"></a> ';
+                        html += '<a href="<?php echo base_url('Admin/PraktikumSiswa/Download/Process/'); ?>' + data.data[i].id_praktikum_siswa + '" class="btn btn-info fas fa-download btn-sm"></a>';
                         html += '</td>';
                         html += '</tr>';
                     }
@@ -120,7 +117,7 @@
         });
 
     });
-</script> -->
+</script>
 
 </body>
 
