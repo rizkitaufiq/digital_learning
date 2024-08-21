@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Agu 2024 pada 12.56
+-- Waktu pembuatan: 21 Agu 2024 pada 20.23
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -81,20 +81,21 @@ CREATE TABLE `latihan_soal` (
   `opsi_c` text NOT NULL,
   `opsi_d` text NOT NULL,
   `jawaban` char(1) NOT NULL,
-  `format` varchar(10) NOT NULL
+  `format` varchar(10) NOT NULL,
+  `bab_id` bigint(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `latihan_soal`
 --
 
-INSERT INTO `latihan_soal` (`id_soal`, `soal`, `opsi_a`, `opsi_b`, `opsi_c`, `opsi_d`, `jawaban`, `format`) VALUES
-(1, 'contoh 1', 'contoh 1', 'contoh', 'contoh 2', 'contoh', 'a', 'center'),
-(2, 'Example 1', 'Example', 'Example', 'Example', 'Example', 'b', 'left'),
-(3, 'Example 2', 'Example 2', 'Example 2 ', 'Example 2', 'Example 2', 'c', 'center'),
-(4, 'Example 123', 'Example 123', 'Example 123', 'Example 123', 'Example 123', 'a', 'left'),
-(5, 'Example 12355', 'Example 1235', 'Example 12355', 'Example 12355', 'Example 123444', 'c', 'left'),
-(6, 'Example 555', 'Example 555', 'Example 555', 'Example 555', 'Example 555', 'd', 'center');
+INSERT INTO `latihan_soal` (`id_soal`, `soal`, `opsi_a`, `opsi_b`, `opsi_c`, `opsi_d`, `jawaban`, `format`, `bab_id`) VALUES
+(1, 'contoh 1', 'contoh 1', 'contoh', 'contoh 2', 'contoh', 'a', 'center', 1),
+(2, 'Example 1', 'Example', 'Example', 'Example', 'Example', 'b', 'left', 1),
+(3, 'Example 2', 'Example 2', 'Example 2 ', 'Example 2', 'Example 2', 'c', 'center', 1),
+(4, 'Example 123', 'Example 123', 'Example 123', 'Example 123', 'Example 123', 'a', 'left', 1),
+(5, 'Example 12355', 'Example 1235', 'Example 12355', 'Example 12355', 'Example 123444', 'c', 'left', 1),
+(6, 'Example 555', 'Example 555', 'Example 555', 'Example 555', 'Example 555', 'd', 'center', 1);
 
 -- --------------------------------------------------------
 
@@ -142,8 +143,65 @@ CREATE TABLE `materi_video` (
 --
 
 INSERT INTO `materi_video` (`id_video`, `judul`, `file_video`) VALUES
-(9, 'contoh 132', 'videoplayback.mp4'),
-(10, 'contoh 2', 'Perilaku_Pengguna_Internet_di_Indonesia_-_Hari_Media_Sosial_(1).mp4');
+(9, 'Aplikasi Pengolah Angka', 'videoplayback.mp4'),
+(10, 'Pengenalan Menu Excel', 'Perilaku_Pengguna_Internet_di_Indonesia_-_Hari_Media_Sosial_(1).mp4'),
+(11, 'Aplikasi Pengolah Kata dan implementasinya', 'Animasi_Motion_Graphic_Iklan_Layanan_Masyarakat-_Waspada_Hoax.mp4');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `nilai`
+--
+
+CREATE TABLE `nilai` (
+  `id_nilai` bigint(10) NOT NULL,
+  `nama_siswa` text NOT NULL,
+  `nilai` int(10) NOT NULL,
+  `latihan_soal` int(10) NOT NULL,
+  `rata-rata` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `praktikum`
+--
+
+CREATE TABLE `praktikum` (
+  `id_praktikum` bigint(10) NOT NULL,
+  `praktikum` char(2) NOT NULL,
+  `soal` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `praktikum`
+--
+
+INSERT INTO `praktikum` (`id_praktikum`, `praktikum`, `soal`) VALUES
+(1, '1', ' Buatlah makalah pada m. word'),
+(2, '2', ' Buatlah absensi pada m excel');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `praktikum_siswa`
+--
+
+CREATE TABLE `praktikum_siswa` (
+  `id_praktikum_siswa` bigint(10) NOT NULL,
+  `tanggal` date NOT NULL,
+  `waktu` time NOT NULL,
+  `file_praktikum` varchar(100) NOT NULL,
+  `siswa_id` bigint(10) NOT NULL,
+  `praktikum_id` bigint(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `praktikum_siswa`
+--
+
+INSERT INTO `praktikum_siswa` (`id_praktikum_siswa`, `tanggal`, `waktu`, `file_praktikum`, `siswa_id`, `praktikum_id`) VALUES
+(3, '2024-08-21', '23:54:20', 'Panduan+Pelaksanaan+OSNK+SD+dan+SMP2.pdf', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -178,19 +236,6 @@ INSERT INTO `siswa` (`id_siswa`, `username`, `password`, `nama`, `tempat_lahir`,
 (9, 'example 42424', '123467789999', 'example 42424', 'papua', '2024-07-03', 'l', 'islam', 111141, 'Papua', 'pppp', '4c'),
 (10, 'contoh22', '22222224444444444', 'contoh243', 'contoh242', '2024-08-10', 'L', 'kristen', 2424121111, 'contoh22', '', '5C'),
 (11, 'contoh12', '24242222', 'contoh12', 'examplec1', '2024-08-10', 'P', 'kristen', 2222444444444, 'contoh12', '', '5c');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `soal`
---
-
-CREATE TABLE `soal` (
-  `id_soal` bigint(10) NOT NULL,
-  `soal` text NOT NULL,
-  `skor` int(100) NOT NULL,
-  `bab_id` bigint(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -227,16 +272,28 @@ ALTER TABLE `materi_video`
   ADD PRIMARY KEY (`id_video`);
 
 --
+-- Indeks untuk tabel `nilai`
+--
+ALTER TABLE `nilai`
+  ADD PRIMARY KEY (`id_nilai`);
+
+--
+-- Indeks untuk tabel `praktikum`
+--
+ALTER TABLE `praktikum`
+  ADD PRIMARY KEY (`id_praktikum`);
+
+--
+-- Indeks untuk tabel `praktikum_siswa`
+--
+ALTER TABLE `praktikum_siswa`
+  ADD PRIMARY KEY (`id_praktikum_siswa`);
+
+--
 -- Indeks untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
   ADD PRIMARY KEY (`id_siswa`);
-
---
--- Indeks untuk tabel `soal`
---
-ALTER TABLE `soal`
-  ADD PRIMARY KEY (`id_soal`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -270,19 +327,31 @@ ALTER TABLE `materi_teks`
 -- AUTO_INCREMENT untuk tabel `materi_video`
 --
 ALTER TABLE `materi_video`
-  MODIFY `id_video` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_video` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT untuk tabel `nilai`
+--
+ALTER TABLE `nilai`
+  MODIFY `id_nilai` bigint(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `praktikum`
+--
+ALTER TABLE `praktikum`
+  MODIFY `id_praktikum` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `praktikum_siswa`
+--
+ALTER TABLE `praktikum_siswa`
+  MODIFY `id_praktikum_siswa` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
   MODIFY `id_siswa` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT untuk tabel `soal`
---
-ALTER TABLE `soal`
-  MODIFY `id_soal` bigint(10) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

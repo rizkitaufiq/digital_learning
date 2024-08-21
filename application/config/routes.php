@@ -19,8 +19,6 @@ $route['Admin/Materi/LatihanSoal/Update/(:num)'] = 'Admin/Materi/LatihanSoal/Upd
 
 // Praktikum Siswa
 
-
-
 // -----------------------------------------Siswa----------------------------------------------------------
 // Materi---------------------------------------------------------------------------------------------------
 $route['Siswa/Materi/Detail/(:num)'] = 'Siswa/Materi/Detail/index/$1';
