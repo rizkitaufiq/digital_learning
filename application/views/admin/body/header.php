@@ -76,7 +76,9 @@
 
                     <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Progress Belajar</a>
 
-                    <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Praktikum Siswa</a>
+                    <a href="<?= site_url('Admin/PraktikumSiswa/Page') ?>" class="<?php if ($menu == 'PraktikumSiswa') {
+                                                                                        echo "active";
+                                                                                    } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Praktikum Siswa</a>
 
                 </div>
             </div>

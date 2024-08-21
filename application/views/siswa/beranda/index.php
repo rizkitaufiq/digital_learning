@@ -82,7 +82,7 @@
                     </div>
 
                     <div>
-                        <a href="#" class="text-decoration-none text-reset">
+                        <a href="<?= site_url('Siswa/Praktikum/Page') ?>" class="text-decoration-none text-reset">
                             <div class="box-icon bg-blue">
                                 <img src="<?= base_url('assets/image/siswa/praktikum.png') ?>" class="img-fluid" style="height: 50px; width:50px;">
                                 <p class="m-0 font-custom">Praktikum</p>

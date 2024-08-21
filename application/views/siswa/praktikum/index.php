@@ -85,7 +85,7 @@
                     </div>
 
                     <div class="col-4 text-center">
-                        <h1>Materi Video</h1>
+                        <h1>Praktikum</h1>
                     </div>
 
                 </div>
@@ -94,7 +94,7 @@
                 <div class="p-4 m-4" style="height: auto;">
 
                     <div class="row d-flex">
-                        <?php foreach ($data as $item) { ?>
+                        <!-- <?php foreach ($data as $item) { ?>
                             <div class="col-md-3 d-flex align-items-stretch">
                                 <div class="d-flex flex-column justify-content-center align-items-center">
                                     <div class="<?php echo $colors[$color_index++]; ?> d-flex justify-content-center align-items-center text-center w-75 mb-5" style="border-radius: 25px;">
@@ -106,7 +106,7 @@
                                 </div>
                             </div>
 
-                        <?php } ?>
+                        <?php } ?> -->
                     </div>
 
                 </div>

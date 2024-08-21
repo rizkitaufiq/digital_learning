@@ -51,7 +51,11 @@
     background-color: #B7C3E1;
 }
 
-p, a{
+body{
+    font-family: "Averia Libre", system-ui;
+}
+
+p, a, h1, h2, h3{
     font-family: "Averia Libre", system-ui;
 }
 

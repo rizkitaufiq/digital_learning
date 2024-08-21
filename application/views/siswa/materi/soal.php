@@ -82,7 +82,7 @@
                     </div>
 
                     <div class="col-4 text-center">
-                        <p>Latihan Soal</p>
+                        <h1>Latihan Soal</h1>
                     </div>
 
                 </div>
