@@ -97,7 +97,7 @@
                         <?php foreach ($data as $item) { ?>
                             <div class="col-md-3 d-flex align-items-stretch">
                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div class="<?php echo $colors[$color_index++]; ?> d-flex justify-content-center align-items-center text-center w-75 mb-5" style="border-radius: 25px;">
+                                    <div class="<?php echo $colors[$color_index++]; ?> d-flex justify-content-center align-items-center text-center w-75 mb-3" style="border-radius: 25px;">
                                         <p class="m-1"><?php echo $item->judul ?></p>
                                     </div>
                                     <div>
