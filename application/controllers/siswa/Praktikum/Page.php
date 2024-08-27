@@ -6,7 +6,7 @@ class Page extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('MateriVideo_model');
+        $this->load->model('Praktikum_model');
     }
 
     public function index()
@@ -41,10 +41,10 @@ class Page extends CI_Controller
 
         $config['base_url']      = base_url('Admin/MateriVideo/Page');
 
-        $config['total_rows']    = $this->MateriVideo_model->Get_Total_MateriVideo();
+        $config['total_rows']    = $this->Praktikum_model->Get_Total_Praktikum();
         $config['per_page']      = $limit;
 
-        $param['data']           = $this->MateriVideo_model->Get_MateriVideo($config['per_page'], $start)->result();
+        $param['data']           = $this->Praktikum_model->Get_Praktikum($config['per_page'], $start)->result();
 
         $this->pagination->initialize($config);
         $param['links']            = $this->pagination->create_links();
