@@ -14,7 +14,8 @@ class ProgresBelajar_model extends CI_Model
         $this->db->select('*');
         $this->db->from('progres_belajar');
         $this->db->where('siswa_id', $id_siswa);
-        $this->db->where('bab_id', $id_materi);
+        $this->db->where('materi_id', $id_materi);
+        $this->db->group_by('id_progres_belajar');
         return $this->db->get();
     }
 
