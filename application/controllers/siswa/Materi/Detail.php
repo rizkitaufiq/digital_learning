@@ -12,9 +12,31 @@ class Detail extends CI_Controller
 
     public function index($id_materi)
     {
+        $id_siswa                 = $this->session->userdata('id_siswa');
+
+        $param['visit']           = $this->ProgresBelajar_model->Get_Progres_Check_Data($id_siswa, $id_materi)->result();
+
+        $param['data'] = $this->MateriTeks_model->Get_Materi_Detail_ID($id_materi)->result();
+        if ($this->session->userdata('role') != 'siswa') {
+            redirect('login');
+        }
+        $this->load->view('siswa/materi/detail', $param);
+    }
+
+    public function Visit()
+    {
+        $id_materi = $this->input->post('id_materi');
+
         $id_siswa                     = $this->session->userdata('id_siswa');
 
         $progres_check_data           = $this->ProgresBelajar_model->Get_Progres_Check_Data($id_siswa, $id_materi)->result();
+
+        $bab                          = $this->MateriTeks_model->Get_Materi_Detail_ID($id_materi)->result();
+
+        foreach ($bab as $item) {
+
+            $bab     = $item->bab_id;
+        }
 
         if (empty($progres_check_data)) {
 
@@ -30,16 +52,13 @@ class Detail extends CI_Controller
 
                 "materi_id"     => $id_materi,
 
+                "bab_id"        => $bab,
+
             );
 
             $this->db->insert('progres_belajar', $data);
         }
 
-
-        $param['data'] = $this->MateriTeks_model->Get_Materi_Detail_ID($id_materi)->result();
-        if ($this->session->userdata('role') != 'siswa') {
-            redirect('login');
-        }
-        $this->load->view('siswa/materi/detail', $param);
+        redirect('Siswa/Materi/Page');
     }
 }

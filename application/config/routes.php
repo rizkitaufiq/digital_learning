@@ -17,6 +17,9 @@ $route['Admin/Materi/MateriTeks/MateriBab'] = 'Admin/Materi/Materiteks/MateriBab
 $route['Admin/Materi/LatihanSoal/Page/(:num)'] = 'Admin/Materi/LatihanSoal/Page/index/$1';
 $route['Admin/Materi/LatihanSoal/Update/(:num)'] = 'Admin/Materi/LatihanSoal/Update/index/$1';
 
+// Progres---------------------------------------------------------------------------------------------------
+$route['Admin/ProgresBelajar/Detail/(:num)'] = 'Admin/ProgresBelajar/Detail/index/$1';
+
 // Praktikum Siswa
 
 // -----------------------------------------Siswa----------------------------------------------------------
@@ -26,3 +29,6 @@ $route['Siswa/Materi/Detail/(:num)'] = 'Siswa/Materi/Detail/index/$1';
 
 // Materi Video---------------------------------------------------------------------------------------------------
 $route['Siswa/MateriVideo/Detail/(:num)'] = 'Siswa/MateriVideo/Detail/index/$1';
+
+// Progres---------------------------------------------------------------------------------------------------
+$route['Siswa/Detail/Visit/(:num)'] = 'Siswa/Detail/Visit/index/$1';

@@ -93,10 +93,29 @@
                     <div class="p-4 m-4" style="height: 60vh;">
                         <p class="text-justify mx-auto"><?php echo $item->isi ?></p>
                     </div>
+
+                    <?php if (empty($visit)) { ?>
+                        <div class="row m-4">
+                            <div class="d-flex justify-content-end gap-2">
+                                <form action="<?php echo site_url('Siswa/Materi/Detail/Visit/') ?>" method="post">
+                                    <input type="hidden" name="id_materi" value="<?php echo $item->id_materi ?>">
+                                    <input type="checkbox">
+                                    <button type="submit" class="btn btn-secondary">Selesai</button>
+                                </form>
+                            </div>
+                        </div>
+                    <?php } else { ?>
+                        <div style="display:hidden;">
+
+                        </div>
+                    <?php } ?>
+
                 </div>
             <?php } ?>
 
         </div>
+
+
     </div>
 </body>
 
