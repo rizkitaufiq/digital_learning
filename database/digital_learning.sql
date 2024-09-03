@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Agu 2024 pada 20.23
+-- Waktu pembuatan: 03 Sep 2024 pada 15.23
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -178,8 +178,8 @@ CREATE TABLE `praktikum` (
 --
 
 INSERT INTO `praktikum` (`id_praktikum`, `praktikum`, `soal`) VALUES
-(1, '1', ' Buatlah makalah pada m. word'),
-(2, '2', ' Buatlah absensi pada m excel');
+(6, '1', ' Buatlah Makalah dengan m.word'),
+(7, '2', ' Buatlah absensi pada m.excel');
 
 -- --------------------------------------------------------
 
@@ -201,7 +201,49 @@ CREATE TABLE `praktikum_siswa` (
 --
 
 INSERT INTO `praktikum_siswa` (`id_praktikum_siswa`, `tanggal`, `waktu`, `file_praktikum`, `siswa_id`, `praktikum_id`) VALUES
-(3, '2024-08-21', '23:54:20', 'Panduan+Pelaksanaan+OSNK+SD+dan+SMP2.pdf', 1, 1);
+(14, '2024-09-03', '14:24:17', 'TROUBLESHOOTING+-+EXAM+KLIEN.pdf', 1, 6),
+(15, '0000-00-00', '00:00:00', '', 2, 6),
+(16, '0000-00-00', '00:00:00', '', 3, 6),
+(17, '0000-00-00', '00:00:00', '', 8, 6),
+(18, '0000-00-00', '00:00:00', '', 9, 6),
+(19, '0000-00-00', '00:00:00', '', 10, 6),
+(20, '0000-00-00', '00:00:00', '', 11, 6),
+(21, '0000-00-00', '00:00:00', '', 1, 7),
+(22, '2024-09-03', '14:36:05', 'Panduan+Pelaksanaan+OSNK+SD+dan+SMP.pdf', 2, 7),
+(23, '0000-00-00', '00:00:00', '', 3, 7),
+(24, '0000-00-00', '00:00:00', '', 8, 7),
+(25, '0000-00-00', '00:00:00', '', 9, 7),
+(26, '0000-00-00', '00:00:00', '', 10, 7),
+(27, '0000-00-00', '00:00:00', '', 11, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `progres_belajar`
+--
+
+CREATE TABLE `progres_belajar` (
+  `id_progres_belajar` bigint(10) NOT NULL,
+  `tanggal` date NOT NULL,
+  `waktu` time NOT NULL,
+  `persentase` int(10) NOT NULL,
+  `siswa_id` bigint(10) NOT NULL,
+  `materi_id` bigint(10) NOT NULL,
+  `bab_id` bigint(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `progres_belajar`
+--
+
+INSERT INTO `progres_belajar` (`id_progres_belajar`, `tanggal`, `waktu`, `persentase`, `siswa_id`, `materi_id`, `bab_id`) VALUES
+(11, '2024-08-28', '19:36:12', 10, 1, 1, 1),
+(12, '2024-08-28', '19:36:22', 10, 1, 2, 1),
+(13, '2024-08-28', '19:37:32', 10, 1, 10, 1),
+(14, '2024-08-28', '19:53:36', 10, 2, 1, 1),
+(15, '2024-08-28', '21:55:38', 10, 1, 8, 2),
+(24, '2024-08-29', '11:17:04', 10, 2, 2, 1),
+(27, '2024-08-29', '19:06:09', 10, 1, 11, 1);
 
 -- --------------------------------------------------------
 
@@ -290,6 +332,12 @@ ALTER TABLE `praktikum_siswa`
   ADD PRIMARY KEY (`id_praktikum_siswa`);
 
 --
+-- Indeks untuk tabel `progres_belajar`
+--
+ALTER TABLE `progres_belajar`
+  ADD PRIMARY KEY (`id_progres_belajar`);
+
+--
 -- Indeks untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
@@ -327,7 +375,7 @@ ALTER TABLE `materi_teks`
 -- AUTO_INCREMENT untuk tabel `materi_video`
 --
 ALTER TABLE `materi_video`
-  MODIFY `id_video` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_video` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `nilai`
@@ -339,13 +387,19 @@ ALTER TABLE `nilai`
 -- AUTO_INCREMENT untuk tabel `praktikum`
 --
 ALTER TABLE `praktikum`
-  MODIFY `id_praktikum` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_praktikum` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `praktikum_siswa`
 --
 ALTER TABLE `praktikum_siswa`
-  MODIFY `id_praktikum_siswa` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_praktikum_siswa` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT untuk tabel `progres_belajar`
+--
+ALTER TABLE `progres_belajar`
+  MODIFY `id_progres_belajar` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`
