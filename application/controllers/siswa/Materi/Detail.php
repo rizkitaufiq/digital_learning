@@ -27,6 +27,8 @@ class Detail extends CI_Controller
     {
         $id_materi = $this->input->post('id_materi');
 
+        $selesai = $this->input->post('selesai') ? 'selesai' : '';
+
         $id_siswa                     = $this->session->userdata('id_siswa');
 
         $progres_check_data           = $this->ProgresBelajar_model->Get_Progres_Check_Data($id_siswa, $id_materi)->result();
@@ -38,25 +40,27 @@ class Detail extends CI_Controller
             $bab     = $item->bab_id;
         }
 
-        if (empty($progres_check_data)) {
+        if ($selesai == "selesai") {
+            if (empty($progres_check_data)) {
 
-            $data = array(
+                $data = array(
 
-                "tanggal"       => date('y-m-d'),
+                    "tanggal"       => date('y-m-d'),
 
-                "waktu"         => date('H:i:s'),
+                    "waktu"         => date('H:i:s'),
 
-                "persentase"    => +10,
+                    "persentase"    => +10,
 
-                "siswa_id"      => $id_siswa,
+                    "siswa_id"      => $id_siswa,
 
-                "materi_id"     => $id_materi,
+                    "materi_id"     => $id_materi,
 
-                "bab_id"        => $bab,
+                    "bab_id"        => $bab,
 
-            );
+                );
 
-            $this->db->insert('progres_belajar', $data);
+                $this->db->insert('progres_belajar', $data);
+            }
         }
 
         redirect('Siswa/Materi/Page');

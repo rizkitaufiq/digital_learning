@@ -118,32 +118,47 @@
                                         </div>
                                     </div>
 
-                                    <div class="d-flex justify-content-start" style="width: 30%;">
-                                        <div class="mt-3">
-                                            <form action="<?php echo site_url('Siswa/Praktikum/Add/Process') ?>" method="post" enctype="multipart/form-data">
-                                                <div class="d-flex flex-column justify-content-start">
-                                                    <input type="hidden" name="id_praktikum" value="<?php echo $item->id_praktikum ?>">
-                                                    <input name="file_praktikum" type="file" accept="application/pdf">
-                                                    <button class="btn btn-secondary w-25 mt-2 p-1" type="submit">Kirim</button>
+                                    <?php if ($item->file_praktikum == "") { ?>
+                                        <div class="d-flex justify-content-start" style="width: 30%;">
+                                            <div class="mt-3">
+                                                <form action="<?php echo site_url('Siswa/Praktikum/Add/Process') ?>" method="post" enctype="multipart/form-data">
+                                                    <div class="d-flex flex-column justify-content-start">
+                                                        <input type="hidden" name="id_praktikum_siswa" value="<?php echo $item->id_praktikum_siswa ?>">
+                                                        <input name="file_praktikum" type="file" accept="application/pdf">
+                                                        <button class="btn btn-secondary w-25 mt-2 p-1" type="submit">Kirim</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center" style="width: 30%;">
+                                            <div class="mt-3">
+                                                <p class="m-0">Belum Dikerjakan</p>
+                                            </div>
+                                        </div>
+                                    <?php } else { ?>
+
+                                        <div class="d-flex justify-content-center" style="width: 30%;">
+                                            <div class="mt-3">
+                                                <div class="d-flex justify-content-center">
+                                                    <button class="btn btn-secondary w-100 mt-2 p-1" type="submit">Terkirim</button>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="d-flex justify-content-center" style="width: 30%;">
-                                        <div class="mt-3">
-                                            <p class="m-0">Completed</p>
+                                        <div class="d-flex justify-content-center" style="width: 30%;">
+                                            <div class="mt-3">
+                                                <p class="m-0">Completed</p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php } ?>
+
                                 </div>
-
                             </div>
-
                         </div>
                     <?php } ?>
 
                 </div>
-
 
             </div>
         </div>

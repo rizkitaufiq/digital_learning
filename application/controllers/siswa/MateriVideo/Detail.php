@@ -11,7 +11,7 @@ class Detail extends CI_Controller
 
     public function index($id_video)
     {
-        $param['data'] = $this->MateriVideo_model->Get_MateriVideo_Detail_ID($id_video)->result();
+        $param['data'] = $this->MateriVideo_model->Get_MateriVideo_ID($id_video)->result();
         if ($this->session->userdata('role') != 'siswa') {
             redirect('login');
         }

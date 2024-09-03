@@ -21,9 +21,10 @@ class MateriVideo_model extends CI_Model
         return $this->db->count_all_results('materi_video');
     }
 
-    public function Get_MateriVideo_Detail_ID($id_video)
+    public function Get_MateriVideo_ID($id_video)
     {
         $this->db->where('id_video', $id_video);
-        return $this->db->get('materi_video');
+        $this->db->from('materi_video');
+        return $this->db->get();
     }
 }

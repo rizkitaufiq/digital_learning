@@ -21,6 +21,7 @@ class Praktikum_model extends CI_Model
         $this->db->from('praktikum_siswa');
         $this->db->join('siswa', 'praktikum_siswa.siswa_id = siswa.id_siswa');
         $this->db->join('praktikum', 'praktikum_siswa.praktikum_id = praktikum.id_praktikum');
+        $this->db->where('file_praktikum !=', ' ');
         $this->db->order_by('nama', 'ASC');
 
         $this->db->limit($limit, $start);
@@ -45,9 +46,11 @@ class Praktikum_model extends CI_Model
     }
 
     // Siswa
-    public function Get_Praktikum($limit, $offset)
+    public function Get_Praktikum($id_siswa, $limit, $offset)
     {
         $this->db->from('praktikum');
+        $this->db->join('praktikum_siswa', 'praktikum.id_praktikum = praktikum_siswa.praktikum_id');
+        $this->db->where('siswa_id', $id_siswa);
         $this->db->limit($limit, $offset);
         return $this->db->get();
     }
@@ -55,5 +58,21 @@ class Praktikum_model extends CI_Model
     public function Get_Total_Praktikum()
     {
         return $this->db->count_all_results('praktikum');
+    }
+
+    public function Get_Praktikum_Siswa_ID($id_siswa)
+    {
+        $this->db->from('praktikum_siswa');
+        $this->db->where('siswa_id', $id_siswa);
+        return $this->db->get();
+    }
+
+    public function Get_Status_Praktikum_Siswa_ID($id_siswa, $praktikum_id)
+    {
+        $this->db->from('praktikum_siswa');
+
+        $this->db->where('siswa_id', $id_siswa);
+        $this->db->where('praktikum_id', $praktikum_id);
+        return $this->db->get();
     }
 }
