@@ -52,18 +52,6 @@ class Page extends CI_Controller
         $param['links']            = $this->pagination->create_links();
 
 
-        // $praktikum                = $this->Praktikum_model->Get_Praktikum_Siswa_ID($id_siswa)->result();
-
-        // foreach ($praktikum as $item) {
-        //     $praktikum_id         = $item->praktikum_id;
-        // }
-
-        // if (isset($praktikum_id))
-        //     $param['status_praktikum_siswa'] = $this->Praktikum_model->Get_Status_Praktikum_Siswa_ID($id_siswa, $praktikum_id)->result();
-
-        // $param['id_siswa'] = $id_siswa;
-
-
         if ($this->session->userdata('role') != 'siswa') {
             redirect('login');
         }
