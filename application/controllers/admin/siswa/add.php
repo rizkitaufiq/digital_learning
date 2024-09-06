@@ -16,8 +16,8 @@ class Add extends CI_Controller
 	{
 
 		$this->form_validation->set_message('required', 'harap isi {field}.');
-        $this->form_validation->set_message('min_length', 'minimal panjang {field} {param}');
-        $this->form_validation->set_message('is_unique', '{field} sudah tersedia');
+		$this->form_validation->set_message('min_length', 'minimal panjang {field} {param}');
+		$this->form_validation->set_message('is_unique', '{field} sudah tersedia');
 
 		$this->form_validation->set_rules('nama', 'nama', 'required');
 		$this->form_validation->set_rules('nisn', 'nisn', 'required|is_unique[siswa.nisn]');
@@ -33,7 +33,6 @@ class Add extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 
 			$this->load->view('admin/siswa/add');
-		
 		} else {
 
 			$data = array(

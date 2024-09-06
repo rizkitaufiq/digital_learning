@@ -44,4 +44,10 @@ class LatihanSoal_model extends CI_Model
         $this->db->from('latihan_soal');
         return $this->db->get();
     }
+
+    public function Get_Count_Latihan_Soal($id_bab)
+    {
+        $this->db->where('bab_id', $id_bab);
+        return $this->db->count_all_results('latihan_soal');
+    }
 }
