@@ -8,6 +8,7 @@
     --blue: #8EC6E5;
     --pink: #FADEDE;
     --green: #B8FAEA;
+    --gray: #D9D9D9;
 
 }
 
@@ -97,6 +98,10 @@ input:disabled {
 
 .bg-green{
     background: var(--green);
+}
+
+.bg-gray{
+    background: var(--gray);
 }
 
 .top-left-image {

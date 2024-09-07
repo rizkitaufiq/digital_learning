@@ -60,4 +60,30 @@ class Nilai_model extends CI_Model
         $this->db->from('nilai_latihan_soal');
         return $this->db->get();
     }
+
+    public function Get_Nilai_Siswa_ID($id_siswa, $limit, $start)
+    {
+        $this->db->select('siswa.nama,
+                          MAX(CASE WHEN bab.id_bab = 1 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_1,
+                          MAX(CASE WHEN bab.id_bab = 2 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_2,
+                          MAX(CASE WHEN bab.id_bab = 3 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_3,
+                          MAX(CASE WHEN bab.id_bab = 4 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_4,
+                          (SUM(nilai_latihan_soal.skor) / COUNT(DISTINCT nilai_latihan_soal.bab_id)) as rata_rata
+        ');
+        $this->db->from('nilai_latihan_soal');
+        $this->db->join('bab', 'nilai_latihan_soal.bab_id = bab.id_bab');
+        $this->db->join('siswa', 'nilai_latihan_soal.siswa_id = siswa.id_siswa');
+        $this->db->where('id_siswa', $id_siswa);
+        $this->db->group_by('nilai_latihan_soal.siswa_id');
+        $this->db->order_by('nama', 'ASC');
+        $this->db->limit($limit, $start);
+        $query = $this->db->get();
+
+        return $query->result_array();
+    }
+
+    public function Get_Total_Nilai_Siswa()
+    {
+        return $this->db->count_all_results('nilai_latihan_soal');
+    }
 }

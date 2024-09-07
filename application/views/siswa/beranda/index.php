@@ -91,7 +91,7 @@
                     </div>
 
                     <div>
-                        <a href="#" class="text-decoration-none text-reset">
+                        <a href="<?= site_url('Siswa/Nilai/Page') ?>" class="text-decoration-none text-reset">
                             <div class="box-icon bg-green">
                                 <img src="<?= base_url('assets/image/siswa/nilai.png') ?>" class="img-fluid" style="height: 50px; width:50px;">
                                 <p class="m-0 font-custom">Nilai</p>
