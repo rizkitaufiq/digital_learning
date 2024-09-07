@@ -7,12 +7,12 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Nama Siswa</th>
-                <th>Kelas</th>
-                <th>Praktikum 1</th>
-                <th>Tanggal/Bln/Thn</th>
-                <th>Waktu</th>
-                <th>Aksi</th>
+                <th style="background-color: #D9D9D9;">Nama Siswa</th>
+                <th style="background-color: #D9D9D9;">Kelas</th>
+                <th style="background-color: #D9D9D9;">Praktikum 1</th>
+                <th style="background-color: #D9D9D9;">Tanggal/Bln/Thn</th>
+                <th style="background-color: #D9D9D9;">Waktu</th>
+                <th style="background-color: #D9D9D9;">Aksi</th>
             </tr>
         </thead>
         <tbody id="items-table">

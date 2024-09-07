@@ -5,12 +5,12 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Nama Siswa</th>
-            <th>Pertemuan 1</th>
-            <th>Pertemuan 2</th>
-            <th>Pertemuan 3</th>
-            <th>Pertemuan 4</th>
-            <th>Rata-rata</th>
+            <th style="background-color: #D9D9D9;">Nama Siswa</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 1</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 2</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 3</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 4</th>
+            <th style="background-color: #D9D9D9;">Rata-rata</th>
         </tr>
     </thead>
     <tbody>

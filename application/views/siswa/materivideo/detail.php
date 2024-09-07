@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Siswa | Soal </title>
+    <title>Siswa | Detail Materi Video </title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/blog/">
 
