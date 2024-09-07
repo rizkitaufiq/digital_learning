@@ -26,4 +26,12 @@ class Nilai_model extends CI_Model
         $this->db->join('nilai_latihan_soal', 'latihan_soal.id_soal = nilai_latihan_soal.latihan_soal_id');
         return $this->db->get();
     }
+
+    public function Get_Nilai_Latihan_Soal_ID($id_siswa, $id_bab)
+    {
+        $this->db->where('siswa_id', $id_siswa);
+        $this->db->where('bab_id', $id_bab);
+        $this->db->from('nilai_latihan_soal');
+        return $this->db->get();
+    }
 }

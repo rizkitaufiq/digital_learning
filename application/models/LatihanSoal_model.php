@@ -50,4 +50,11 @@ class LatihanSoal_model extends CI_Model
         $this->db->where('bab_id', $id_bab);
         return $this->db->count_all_results('latihan_soal');
     }
+
+    public function Get_Nilai_Latihan_Soal_ID($id_nilai)
+    {
+        $this->db->where('id_nilai', $id_nilai);
+        $this->db->from('nilai_latihan_soal');
+        return $this->db->get();
+    }
 }

@@ -238,10 +238,10 @@
                         </div>
 
                         <div class="d-flex justify-content-center align-items-center gap-3 p-2" style="margin-left: 1rem;">
-                            <a href="" style="text-decoration:none; color:black">
+                            <a href="<?php echo site_url('Siswa/Materi/LatihanSoal/Repeat/') . $id_bab ?>" style="text-decoration:none; color:black">
                                 Ulangi
                             </a>
-                            <a href="<?php echo site_url('Siswa/Materi/LatihanSoal') ?>" style="text-decoration:none; color:black">
+                            <a href="<?php echo site_url('Siswa/Materi/LatihanSoal/Save/') . $id_nilai ?>" style="text-decoration:none; color:black">
                                 Simpan
                             </a>
                         </div>
