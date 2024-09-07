@@ -9,6 +9,10 @@ $route['translate_uri_dashes'] = FALSE;
 // Siswa---------------------------------------------------------------------------------------------------
 $route['Admin/Siswa/Update/(:num)'] = 'Admin/Siswa/Update/index/$1';
 
+// Nilai---------------------------------------------------------------------------------------------------
+$route['Admin/Nilai/Page/(:num)'] = 'Admin/Nilai/Page/index/$1';
+$route['Admin/Nilai/Page/(:num)/(:num)'] = 'Admin/Nilai/Page/index/$1/$1';
+
 // Materi---------------------------------------------------------------------------------------------------
 $route['Admin/Materi/MateriTeks/MateriBab/(:num)'] = 'Admin/Materi/MateriTeks/MateriBab/index/$1';
 $route['Admin/Materi/MateriTeks/MateriBab/(:num)/(:num)'] = 'Admin/Materi/MateriTeks/MateriBab/index/$1/$1';

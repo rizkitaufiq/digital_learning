@@ -56,7 +56,9 @@
                                                                                 echo "active";
                                                                             } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Siswa</a>
 
-                    <a href="" class="btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Nilai</a>
+                    <a href="<?= site_url('Admin/Nilai/Page') ?>" class="<?php if ($menu == 'Nilai') {
+                                                                                echo "active";
+                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Nilai</a>
 
                     <div class="<?php if ($menu == 'Materi') {
                                     echo "active";
