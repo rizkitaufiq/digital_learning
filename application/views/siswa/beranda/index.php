@@ -29,7 +29,8 @@
         <div class="text-dark">
             <div class="mt-2">
                 <div class="row">
-                    <div class="col-sm-6 col-md-4">
+
+                    <div class="slide col-sm-6 col-md-4">
                         <p class="mb-0">desktop 1</p>
                         <div class="position-relative box-content bg-yellow box-custom">
                             <p class="m-0">Selamat Datang di Digital</p>
