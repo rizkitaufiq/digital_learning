@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Sep 2024 pada 15.23
+-- Waktu pembuatan: 08 Sep 2024 pada 10.26
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -150,16 +150,25 @@ INSERT INTO `materi_video` (`id_video`, `judul`, `file_video`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai`
+-- Struktur dari tabel `nilai_latihan_soal`
 --
 
-CREATE TABLE `nilai` (
+CREATE TABLE `nilai_latihan_soal` (
   `id_nilai` bigint(10) NOT NULL,
-  `nama_siswa` text NOT NULL,
-  `nilai` int(10) NOT NULL,
-  `latihan_soal` int(10) NOT NULL,
-  `rata-rata` int(10) NOT NULL
+  `siswa_id` bigint(10) NOT NULL,
+  `bab_id` int(10) NOT NULL,
+  `skor` int(10) NOT NULL,
+  `status_tes` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `nilai_latihan_soal`
+--
+
+INSERT INTO `nilai_latihan_soal` (`id_nilai`, `siswa_id`, `bab_id`, `skor`, `status_tes`) VALUES
+(1, 1, 1, 3, 2),
+(2, 2, 1, 3, 2),
+(3, 3, 1, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -314,9 +323,9 @@ ALTER TABLE `materi_video`
   ADD PRIMARY KEY (`id_video`);
 
 --
--- Indeks untuk tabel `nilai`
+-- Indeks untuk tabel `nilai_latihan_soal`
 --
-ALTER TABLE `nilai`
+ALTER TABLE `nilai_latihan_soal`
   ADD PRIMARY KEY (`id_nilai`);
 
 --
@@ -378,10 +387,10 @@ ALTER TABLE `materi_video`
   MODIFY `id_video` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT untuk tabel `nilai`
+-- AUTO_INCREMENT untuk tabel `nilai_latihan_soal`
 --
-ALTER TABLE `nilai`
-  MODIFY `id_nilai` bigint(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `nilai_latihan_soal`
+  MODIFY `id_nilai` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `praktikum`

@@ -53,9 +53,9 @@
 
                     <div class="col-sm-6 col-md-4">
                         <p class="mb-0">desktop 3</p>
-                        <div class="box-content bg-pink box-custom">
-                            <h3>Text</h3>
-                            <p>Text</p>
+                        <div class="d-flex box-content bg-pink box-custom">
+                            <p class="d-flex justify-content-center align-items-center">Waktunya Untuk Belajar
+                                “Dengan ilmu, kamu bisa meraih apa pun yang kamu impikan.</p>
                         </div>
                     </div>
                 </div>

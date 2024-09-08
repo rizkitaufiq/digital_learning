@@ -20,26 +20,26 @@
             <!-- Left Content -->
             <div class="col-md-6 d-flex justify-content-center align-items-center flex-column left-box mt-5">
                 <div class="featured-image mb-3">
-                    <img class="img-fluid" src="<?= base_url('assets/'); ?>image/login/icon_login.png">
+                    <img class="img-fluid" src="<?= base_url('assets/'); ?>image/login/icon_login.png" width="280">
                 </div>
             </div>
 
             <!-- Right Content -->
             <div class="col-md-6 d-flex justify-content-center align-items-center right-box mt-5">
                 <form action="<?= site_url('login/auth'); ?>" method="post">
-                    <div class="row align-items-center">
+                    <div class="row d-flex justify-content-center align-items-center w-full">
                         <div class="d-flex justify-content-center align-items-center m-2">
                             <?php if ($this->session->flashdata('error')) : ?>
                                 <div class="alert alert-danger w-100"><?php echo $this->session->flashdata('error'); ?></div>
                             <?php endif; ?>
                         </div>
 
-                        <div class="input-group m-2">
-                            <input type="text" name="username" class="form-control form-control-lg bg-white fs-6" style="border-radius: 12px;height:7.5vh" placeholder="Username" required="">
+                        <div class="input-group m-2 d-flex w-75">
+                            <input type="text" name="username" class="form-control form-control-lg bg-white fs-6 w-50" style="border-radius: 12px;" placeholder="Username" required="">
                         </div>
 
-                        <div class="input-group m-2">
-                            <input type="password" name="password" class="form-control form-control-lg bg-white fs-6" style="border-radius: 12px;height:7.5vh" placeholder="Password" required="">
+                        <div class="input-group m-2 w-75">
+                            <input type="password" name="password" class="form-control form-control-lg bg-white fs-6" style="border-radius: 12px;height:5.5vh" placeholder="Password" required="">
                         </div>
 
                         <div class="d-flex input-group m-2 justify-content-center align-items-center rounded-sm mt-3">
