@@ -74,7 +74,7 @@
 
                             <div class="form-group mt-2">
                                 <label for="isi">Isi Materi</label>
-                                <textarea name="isi" type="text" class="form-control" style="border: 1px solid black;height:20vh;border-radius:0;" required></textarea>
+                                <textarea name="isi" type="longtext" class="form-control" style="border: 1px solid black;height:20vh;border-radius:0;" required></textarea>
                             </div>
 
                             <div class="form-group mt-2">

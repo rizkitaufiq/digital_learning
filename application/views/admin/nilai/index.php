@@ -10,6 +10,12 @@
             <th style="background-color: #D9D9D9;">Pertemuan 2</th>
             <th style="background-color: #D9D9D9;">Pertemuan 3</th>
             <th style="background-color: #D9D9D9;">Pertemuan 4</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 5</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 6</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 7</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 8</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 9</th>
+            <th style="background-color: #D9D9D9;">Pertemuan 10</th>
             <th style="background-color: #D9D9D9;">Rata-rata</th>
         </tr>
     </thead>
@@ -21,6 +27,12 @@
                 <td><?= $item['bab_2']; ?></td>
                 <td><?= $item['bab_3']; ?></td>
                 <td><?= $item['bab_4']; ?></td>
+                <td><?= $item['bab_5']; ?></td>
+                <td><?= $item['bab_6']; ?></td>
+                <td><?= $item['bab_7']; ?></td>
+                <td><?= $item['bab_8']; ?></td>
+                <td><?= $item['bab_9']; ?></td>
+                <td><?= $item['bab_10']; ?></td>
                 <td><?= number_format($item['rata_rata']); ?></td>
             </tr>
         <?php endforeach; ?>

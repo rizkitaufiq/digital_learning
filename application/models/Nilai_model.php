@@ -17,6 +17,12 @@ class Nilai_model extends CI_Model
                           MAX(CASE WHEN bab.id_bab = 2 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_2,
                           MAX(CASE WHEN bab.id_bab = 3 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_3,
                           MAX(CASE WHEN bab.id_bab = 4 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_4,
+                          MAX(CASE WHEN bab.id_bab = 5 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_5,
+                          MAX(CASE WHEN bab.id_bab = 6 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_6,
+                          MAX(CASE WHEN bab.id_bab = 7 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_7,
+                          MAX(CASE WHEN bab.id_bab = 8 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_8,
+                          MAX(CASE WHEN bab.id_bab = 9 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_9,
+                          MAX(CASE WHEN bab.id_bab = 10 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_10,
                           (SUM(nilai_latihan_soal.skor) / COUNT(DISTINCT nilai_latihan_soal.bab_id)) as rata_rata
         ');
         $this->db->from('nilai_latihan_soal');
@@ -68,6 +74,12 @@ class Nilai_model extends CI_Model
                           MAX(CASE WHEN bab.id_bab = 2 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_2,
                           MAX(CASE WHEN bab.id_bab = 3 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_3,
                           MAX(CASE WHEN bab.id_bab = 4 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_4,
+                          MAX(CASE WHEN bab.id_bab = 5 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_5,
+                          MAX(CASE WHEN bab.id_bab = 6 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_6,
+                          MAX(CASE WHEN bab.id_bab = 7 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_7,
+                          MAX(CASE WHEN bab.id_bab = 8 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_8,
+                          MAX(CASE WHEN bab.id_bab = 9 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_9,
+                          MAX(CASE WHEN bab.id_bab = 10 THEN nilai_latihan_soal.skor ELSE 0 END) as bab_10,
                           (SUM(nilai_latihan_soal.skor) / COUNT(DISTINCT nilai_latihan_soal.bab_id)) as rata_rata
         ');
         $this->db->from('nilai_latihan_soal');

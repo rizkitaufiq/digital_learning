@@ -20,7 +20,7 @@
             <!-- Left Content -->
             <div class="col-md-6 d-flex justify-content-center align-items-center flex-column left-box mt-5">
                 <div class="featured-image mb-3">
-                    <img class="img-fluid" src="<?= base_url('assets/'); ?>image/login/icon_login.png" width="280">
+                    <img class="img-fluid" src="<?= base_url('assets/'); ?>image/login/icon_login.png" width="200">
                 </div>
             </div>
 
@@ -34,16 +34,16 @@
                             <?php endif; ?>
                         </div>
 
-                        <div class="input-group m-2 d-flex w-75">
+                        <div class="input-group m-2 d-flex w-50">
                             <input type="text" name="username" class="form-control form-control-lg bg-white fs-6 w-50" style="border-radius: 12px;" placeholder="Username" required="">
                         </div>
 
-                        <div class="input-group m-2 w-75">
+                        <div class="input-group m-2 w-50">
                             <input type="password" name="password" class="form-control form-control-lg bg-white fs-6" style="border-radius: 12px;height:5.5vh" placeholder="Password" required="">
                         </div>
 
                         <div class="d-flex input-group m-2 justify-content-center align-items-center rounded-sm mt-3">
-                            <button type="submit" class="btn btn-lg btn-secondary w-50 fs-6" style="border-radius: 12px;">Login</button>
+                            <button type="submit" class="btn btn-lg btn-secondary w-25 fs-6 " style="border-radius: 12px;height: 5.5vh;">Login</button>
                         </div>
                     </div>
                 </form>
