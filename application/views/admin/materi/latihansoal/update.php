@@ -101,6 +101,15 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <select name="bab_id" class="form-control mb-2 mt-2 w-25" style="height:7vh;border-radius: 10px; border: 1px solid #000000">
+                                        <option disabled>Bab</option>
+                                        <?php foreach ($bab_id as $item) { ?>
+                                            <option value="<?php echo $item->id_bab ?>">Bab <?php echo $item->id_bab ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+
                                 <div class="form-group d-flex justify-content-end align-item-center">
                                     <button type="submit" class="main-bg" style="color:black;border:none;">Simpan</button>
                                 </div>
@@ -182,6 +191,15 @@
                                                     <input type="radio" name="jawaban" value="d" class="m-2">
                                                 <?php } ?>
                                             </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <select name="bab_id" class="form-control mb-2 mt-2 w-25" style="height:7vh;border-radius: 10px; border: 1px solid #000000">
+                                                <option disabled>Bab</option>
+                                                <?php foreach ($bab_id as $item) { ?>
+                                                    <option value="<?php echo $item->id_bab ?>">Bab <?php echo $item->id_bab ?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
