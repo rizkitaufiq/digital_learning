@@ -32,6 +32,6 @@ class Add extends CI_Controller
 
         $this->db->insert('materi_video', $data);
 
-        echo "<script>alert('Data Berhasil Ditambahkan !');history.go(-1);</script>";
+        echo "<script>alert('Materi Video Berhasil Ditambahkan !');history.go(-1);</script>";
     }
 }
