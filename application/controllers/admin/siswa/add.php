@@ -61,7 +61,9 @@ class Add extends CI_Controller
 
 			$this->db->insert('siswa', $data);
 
-			redirect('Admin/Siswa/Page');
+			echo "<script>alert('Data Siswa Berhasil Ditambahkan !')</script>";
+			$this->load->view('admin/body/header');
+			$this->load->view('admin/siswa/index');
 		}
 	}
 }

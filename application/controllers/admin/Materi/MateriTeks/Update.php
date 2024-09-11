@@ -29,6 +29,6 @@ class Update extends CI_Controller
         $this->db->where('id_materi', $id);
         $this->db->update('materi_teks', $data);
 
-        echo "<script>alert('Materi Berhasil Di Ubah !');history.go(-1);</script>";
+        echo "<script>alert('Materi Berhasil Diubah !');history.go(-1);</script>";
     }
 }

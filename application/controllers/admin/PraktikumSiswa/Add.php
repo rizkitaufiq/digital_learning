@@ -7,7 +7,6 @@ class Add extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Siswa_model');
-        // $this->load->model('Praktikum_model');
     }
 
     public function Process()
@@ -26,7 +25,6 @@ class Add extends CI_Controller
         $this->db->insert('praktikum', $data_praktikum);
 
         $praktikum_id =  $this->db->insert_id();
-        // $praktikum_data = $this->Praktikum_model->db->Get_Praktikum_Data()->restul();
 
         foreach ($siswa_data as $item) {
 
@@ -43,6 +41,6 @@ class Add extends CI_Controller
             $this->db->insert('praktikum_siswa', $data_praktikum_siswa);
         }
 
-        redirect('Admin/PraktikumSiswa/Page');
+        echo "<script>alert('Praktikum Berhasil Ditambahkan !');history.go(-1);</script>";
     }
 }

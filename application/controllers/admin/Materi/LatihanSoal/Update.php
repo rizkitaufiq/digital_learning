@@ -48,7 +48,7 @@ class Update extends CI_Controller
 
         $this->db->where('id_soal', $id);
         $this->db->update('latihan_soal', $data);
-        echo "<script>alert('Soal Berhasil Di Ubah !');</script>";
+        echo "<script>alert('Soal Berhasil Diubah !');</script>";
 
         $start                    = $this->uri->segment(5);
         $limit                  = 5;

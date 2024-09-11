@@ -54,6 +54,6 @@ class Update extends CI_Controller
 
         $this->db->where('id_video', $id_video);
         $this->db->update('materi_video', $data);
-        echo "<script>alert('Materi Video Berhasil Di Ubah !');history.go(-1);</script>";
+        echo "<script>alert('Materi Video Berhasil Diubah !');history.go(-1);</script>";
     }
 }
