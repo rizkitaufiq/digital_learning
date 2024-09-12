@@ -77,7 +77,7 @@
         <div class="text-dark">
 
             <?php foreach ($data as $item) { ?>
-                <div class="container mt-4 <?php echo $colors[$color_index++]; ?>" style="border-radius:25px;border:1px solid black;">
+                <div class="container mt-4 <?php echo $colors[$color_index++]; ?>" style="border-radius:25px;border:1px solid black;height: max-content;">
                     <div class="row mt-4">
                         <div class="col-4 text-left">
                             <i class="fas fa-chevron-left"></i>
@@ -90,8 +90,8 @@
                     </div>
                     <div class="mx-auto" style="border-top: 1px solid black;width:96%;"></div>
 
-                    <div class="p-4 m-4" style="height: 60vh;">
-                        <p class="text-justify mx-auto"><?php echo $item->isi ?></p>
+                    <div class="p-4 m-4 w-full" style="width: 100vh;height:100vh;">
+                        <iframe src="<?php echo base_url('upload/materi/teks/') . $item->isi ?>" style="width: 160%;height:100%"></iframe>
                     </div>
 
                     <?php if (empty($visit)) { ?>

@@ -41,6 +41,6 @@ class Add extends CI_Controller
         $this->db->where('id_praktikum_siswa', $id_praktikum_siswa);
         $this->db->update('praktikum_siswa', $data);
 
-        echo "<script>alert('Data Berhasil Ditambahkan !');history.go(-1);</script>";
+        echo "<script>alert('Praktikum Berhasil Dikirim !');history.go(-1);</script>";
     }
 }

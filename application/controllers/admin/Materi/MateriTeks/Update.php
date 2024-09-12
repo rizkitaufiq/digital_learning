@@ -12,21 +12,58 @@ class Update extends CI_Controller
 
     public function Process()
     {
-        $id        = $this->input->post('id_materi');
+        $id_materi        = $this->input->post('id_materi');
 
-        $data = array(
+        $file_materi       = $this->MateriTeks_model->Get_MateriTeks_ID($id_materi)->result();
 
-            "judul"         => $this->input->post('judul'),
+        $isi                = $_FILES['isi'];
 
-            "isi"           => $this->input->post('isi'),
+        $config['upload_path']        = 'upload/materi/teks';
 
-            "penjelasan"    => $this->input->post('penjelasan'),
+        $config['allowed_types']    = 'pdf';
 
-            "bab_id"        => $this->input->post('bab_id'),
+        $this->upload->initialize($config);
 
-        );
+        $this->upload->do_upload('isi');
 
-        $this->db->where('id_materi', $id);
+        $isi = $this->upload->data('file_name');
+
+        foreach ($file_materi as $item) {
+
+            if ($isi != "") {
+
+                if ($file_materi) {
+                    $file_path = 'upload/materi/teks/' . $item->isi;
+
+                    unlink($file_path);
+
+                    $data = array(
+
+                        "judul"         => $this->input->post('judul'),
+
+                        "isi"           => $isi,
+
+                        "penjelasan"         => $this->input->post('penjelasan'),
+
+                        "bab_id"         => $this->input->post('bab_id'),
+
+                    );
+                }
+            } else {
+
+                $data = array(
+
+                    "judul"         => $this->input->post('judul'),
+
+                    "penjelasan"         => $this->input->post('penjelasan'),
+
+                    "bab_id"         => $this->input->post('bab_id'),
+
+                );
+            }
+        }
+
+        $this->db->where('id_materi', $id_materi);
         $this->db->update('materi_teks', $data);
 
         echo "<script>alert('Materi Berhasil Diubah !');history.go(-1);</script>";

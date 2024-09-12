@@ -33,6 +33,13 @@ class MateriTeks_model extends CI_Model
         return $this->db->get();
     }
 
+    public function Get_MateriTeks_ID($id_materi)
+    {
+        $this->db->from('materi_teks');
+        $this->db->where('id_materi', $id_materi);
+        return $this->db->get();
+    }
+
 
     public function Get_Materi_Detail_ID($id_materi)
     {

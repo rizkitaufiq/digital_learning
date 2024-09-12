@@ -63,7 +63,7 @@
             <div class="modal-dialog main-bg" style="border: 1px solid black;">
                 <div class="modal-content main-bg" style="border-radius: 0;">
                     <div class="modal-body">
-                        <form action="<?php echo site_url('Admin/Materi/MateriTeks/Add/Process'); ?>" method="post">
+                        <form action="<?php echo site_url('Admin/Materi/MateriTeks/Add/Process'); ?>" method="post" enctype="multipart/form-data">
                             <?php foreach ($data_bab as $item) { ?>
                                 <input name="id_bab" type="hidden" class="form-control" value="<?php echo $item->id_bab ?>">
                             <?php } ?>
@@ -74,7 +74,7 @@
 
                             <div class="form-group mt-2">
                                 <label for="isi">Isi Materi</label>
-                                <textarea name="isi" type="longtext" class="form-control" style="border: 1px solid black;height:20vh;border-radius:0;" required></textarea>
+                                <input class="form-control w-50" name="isi" type="file" accept="application/pdf">
                             </div>
 
                             <div class="form-group mt-2">
@@ -96,7 +96,7 @@
             <div class="modal-dialog main-bg" style="border: 1px solid black;">
                 <div class="modal-content main-bg" style="border-radius: 0;">
                     <div class="modal-body">
-                        <form action="<?php echo site_url('Admin/Materi/MateriTeks/Update/Process'); ?>" method="post">
+                        <form action="<?php echo site_url('Admin/Materi/MateriTeks/Update/Process'); ?>" method="post" enctype="multipart/form-data">
 
                             <input id="id_materi" name="id_materi" type="hidden" class="form-control">
                             <input id="bab_id" name="bab_id" type="hidden" class="form-control">
@@ -108,7 +108,7 @@
 
                             <div class="form-group mt-2">
                                 <label for="isi">Isi Materi</label>
-                                <textarea name="isi" id="isi" type="text" class="form-control" style="border: 1px solid black;height:20vh;border-radius:0;"></textarea>
+                                <input class="form-control w-50" name="isi" type="file" accept="application/pdf">
                             </div>
 
                             <div class="form-group mt-2">

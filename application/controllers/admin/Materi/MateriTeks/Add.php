@@ -12,11 +12,23 @@ class Add extends CI_Controller
 
     public function Process()
     {
+        $isi                          = $_FILES['isi'];
+
+        $config['upload_path']        = 'upload/materi/teks';
+
+        $config['allowed_types']      = 'pdf';
+
+        $this->upload->initialize($config);
+
+        $this->upload->do_upload('isi');
+
+        $isi                         = $this->upload->data('file_name');
+
         $data = array(
 
             "judul"         => $this->input->post('judul'),
 
-            "isi"           => $this->input->post('isi'),
+            "isi"           => $isi,
 
             "penjelasan"    => $this->input->post('penjelasan'),
 

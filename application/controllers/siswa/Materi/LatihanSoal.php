@@ -185,7 +185,7 @@ class LatihanSoal extends CI_Controller
         $this->db->where('id_nilai', $id_nilai);
         $this->db->update('nilai_latihan_soal', $data);
 
-        echo "<script>alert('Nilai Berhasil Disimpan !');</script>";
+        echo "<script>alert('Jawaban Berhasil Di Kirim !');</script>";
         redirect('Siswa/Materi/LatihanSoal');
     }
 }
