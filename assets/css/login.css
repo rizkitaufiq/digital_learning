@@ -6,12 +6,9 @@
     --dark: #0E2E50;
 }
 
-body {
-    background: #F6F8BC;
-}
-
 .box-area{
-    width: 930px;
+    width: 700px;
+    background: #F6F8BC;
 }
 
 /*------------ right content ------------*/
