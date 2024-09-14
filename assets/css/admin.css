@@ -7,6 +7,10 @@
     --background: #F6F8BC;
 }
 
+*{
+    font-family: "Averia Libre", system-ui;
+}
+
 p, h4{
     font-family: "Averia Libre", system-ui;
 }
@@ -22,8 +26,7 @@ a{
 
 .box-area{
     margin:0;
-    padding: 15vh;
-    height: 50%;
+    padding: 4rem;
     border: 1px solid black;
 }
 
@@ -104,7 +107,6 @@ a{
 
 .text-container {
     position: relative;
-    /* padding-bottom: 100px; Sesuaikan dengan tinggi gambar */
 }
 .bottom-left-image {
     position: absolute;

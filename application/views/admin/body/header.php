@@ -48,22 +48,22 @@
 
                     <?php $menu    = $this->uri->segment(2); ?>
 
-                    <a href="<?= site_url('Admin/Beranda/Page') ?>" class="<?php if ($menu == 'Beranda') {
+                    <a href="<?= site_url('Admin/Beranda/Page') ?>" class="<?php if ($menu == 'Beranda' || $menu == 'beranda') {
                                                                                 echo "active";
-                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Beranda</a>
+                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh; font-weight:bold;">Beranda</a>
 
                     <a href="<?= site_url('Admin/Siswa/Page') ?>" class="<?php if ($menu == 'Siswa') {
                                                                                 echo "active";
-                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Siswa</a>
+                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh; font-weight:bold;">Siswa</a>
 
-                    <a href="<?= site_url('Admin/Nilai/Page') ?>" class="<?php if ($menu == 'Nilai') {
+                    <a href=" <?= site_url('Admin/Nilai/Page') ?>" class="<?php if ($menu == 'Nilai') {
                                                                                 echo "active";
-                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Nilai</a>
+                                                                            } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh; font-weight:bold;">Nilai</a>
 
-                    <div class="<?php if ($menu == 'Materi') {
-                                    echo "active";
-                                } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2 dropdown" style="border-radius: 25px; height:7vh;" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
-                        <a class="d-flex align-items-center justify-content-center text-center" style="border-radius: 25px; height:7vh;">
+                    <div class=" <?php if ($menu == 'Materi') {
+                                        echo "active";
+                                    } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2 dropdown" style="border-radius: 25px; height:7vh;" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
+                        <a class="d-flex align-items-center justify-content-center text-center" style="border-radius: 25px; height:7vh;font-weight:bold;">
                             Materi
                         </a>
                     </div>
@@ -74,15 +74,15 @@
 
                     <a href="<?= site_url('Admin/MateriVideo/Page') ?>" class="<?php if ($menu == 'MateriVideo') {
                                                                                     echo "active";
-                                                                                } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Materi Video</a>
+                                                                                } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh;font-weight:bold;">Materi Video</a>
 
-                    <a href="<?= site_url('Admin/ProgresBelajar/Page') ?>" class="<?php if ($menu == 'ProgresBelajar') {
+                    <a href=" <?= site_url('Admin/ProgresBelajar/Page') ?>" class="<?php if ($menu == 'ProgresBelajar') {
                                                                                         echo "active";
-                                                                                    } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Progres Belajar</a>
+                                                                                    } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh;font-weight:bold;">Progres Belajar</a>
 
                     <a href="<?= site_url('Admin/PraktikumSiswa/Page') ?>" class="<?php if ($menu == 'PraktikumSiswa') {
                                                                                         echo "active";
-                                                                                    } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh">Praktikum Siswa</a>
+                                                                                    } ?> btn btn-info d-flex align-items-center justify-content-center text-center w-50 m-2" style="border-radius: 25px; height:7vh;font-weight:bold;">Praktikum Siswa</a>
 
                 </div>
             </div>

@@ -19,7 +19,7 @@
         <div class="row box-area" style="border-radius:25px;border:1px solid black;">
             <!-- Left Content -->
             <div class="col-md-6 d-flex justify-content-center align-items-center flex-column left-box mt-5">
-                <div class="featured-image mb-3" style="margin-left: 1rem;">
+                <div class="featured-image mb-3">
                     <img class="img-fluid" src="<?= base_url('assets/'); ?>image/login/icon_login.png" width="200">
                 </div>
             </div>
@@ -27,7 +27,7 @@
             <!-- Right Content -->
             <div class="col-md-6 d-flex justify-content-center align-items-center right-box mt-5">
                 <form action="<?= site_url('login/auth'); ?>" method="post">
-                    <div class="row d-flex justify-content-center align-items-center w-full" style="margin-right: 1rem;">
+                    <div class="row d-flex justify-content-center align-items-center w-full">
                         <div class="d-flex justify-content-center align-items-center m-2">
                             <?php if ($this->session->flashdata('error')) : ?>
                                 <div class="alert alert-danger w-100"><?php echo $this->session->flashdata('error'); ?></div>
