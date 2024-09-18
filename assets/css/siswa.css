@@ -9,7 +9,12 @@
     --pink: #FADEDE;
     --green: #B8FAEA;
     --gray: #D9D9D9;
+    --dark-yellow : #E2D346;
 
+}
+
+*{
+    font-family: "Averia Libre", system-ui;
 }
 
 .color-1{
@@ -74,10 +79,11 @@ input:disabled {
     border: 1px solid white;
     padding: 2px;
     text-align: center;
-    width: 80px;
-    height: 80px;
+    width: auto;
+    height: auto;
     margin-top: 1rem;
     margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 .box-custom{
@@ -86,6 +92,10 @@ input:disabled {
 
 .bg-yellow{
     background: var(--background);
+}
+
+.bg-dark-yellow{
+    background: var(--dark-yellow);
 }
 
 .bg-blue{
@@ -115,15 +125,32 @@ input:disabled {
 .bottom-left-image {
     bottom: 0;
     left: 0;
-    width: 85px;
-    height: 85px;
     height: auto;
-    margin-top: 2rem;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
+}
+
+.bottom-right-image {
+    bottom: 0;
+    right: 0;
+    height: auto;
+    margin-right: 0.5rem;
 }
 
 .font-custom{
     font-size: 12px;
+}
+
+.scroll-box {
+    height: 130px; /* Tinggi elemen */
+    overflow: auto;
+}
+
+.scroll-box::-webkit-scrollbar {
+    display: none; 
+}
+
+.scroll-box {
+    scrollbar-width: none; 
 }
 
 /*------------ For small screens------------*/
