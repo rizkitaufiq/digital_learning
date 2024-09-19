@@ -86,7 +86,7 @@
                                                 '<?= $item->judul ?>',
                                                 '<?= $item->file_video ?>',
                                             )"></a>
-                                             <a href="<?php echo base_url('Admin/MateriVideo/View/Process/') . $item->id_video ?>" class="btn btn-info fas fa-eye m-1" style="border-radius: 8px;"></a>
+                                             <a href="<?php echo base_url('Admin/MateriVideo/Page/ViewVideo/') . $item->id_video ?>" class="btn btn-info fas fa-eye m-1" style="border-radius: 8px;"></a>
                                              <a href="<?php echo base_url('Admin/MateriVideo/Download/Process/') . $item->id_video ?>" class="btn btn-info fas fa-download m-1" style="border-radius: 8px;"></a>
                                              <a href="<?php echo base_url('Admin/MateriVideo/Delete/Process/') . $item->id_video ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="btn btn-info fas fa-trash m-1" style="border-radius: 8px;"></a>
                                          </div>

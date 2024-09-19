@@ -29,6 +29,8 @@
                                                 '<?= $item->penjelasan ?>',
                                                 '<?= $item->bab_id ?>',
                                             )"></a>
+                                            <a href="<?php echo base_url('Admin/Materi/MateriTeks/MateriBab/ViewPDF/') . $item->id_materi ?>" class="btn btn-info fas fa-eye m-1" style="border-radius: 8px;"></a>
+                                            <a href="<?php echo base_url('Admin/Materi/MateriTeks/Download/Process/') . $item->id_materi ?>" class="btn btn-info fas fa-download m-1" style="border-radius: 8px;"></a>
                                             <a href="<?php echo base_url('Admin/Materi/MateriTeks/Delete/Process/') . $item->id_materi ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="btn btn-info fas fa-trash m-1" style="border-radius: 8px;"></a>
                                         </div>
                                     </div>
