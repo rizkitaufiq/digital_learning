@@ -1,5 +1,5 @@
 <body>
-    <div class="p-md-2 second-bg mt-3">
+    <div class="p-md-2 main-bg mt-3">
         <div class="text-dark">
             <div class="d-flex justify-content-center align-items center text-center">
                 <?php foreach ($data_bab as $item) { ?>
@@ -8,7 +8,7 @@
 
             </div>
             <div class="mt-2 mx-5">
-                <div class="p-md-2 main-bg">
+                <div class="p-md-2 main-bg" style="border:1px solid black;">
                     <div class="row mx-5">
 
                         <div class="col-sm-6 col-md-12 mt-4">
