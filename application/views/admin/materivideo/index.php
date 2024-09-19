@@ -45,7 +45,7 @@
          <div class="text-dark">
              <div class="row p-5 mx-5">
                  <div class="col-4 text-left">
-                     <button type="button" class="btn btn-info" style="border:1px solid black; border-radius: 25px;" data-toggle="modal" data-target="#AddModal">+ Tambah Materi</button>
+                     <button type="button" class="btn btn-info" style="border:1px solid black; border-radius: 25px;" data-toggle="modal" data-target="#AddModal">+ Tambah Video</button>
                  </div>
 
                  <div class="col-4 text-center">

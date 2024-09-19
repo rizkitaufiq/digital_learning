@@ -35,6 +35,7 @@
 
                                         <div class="d-flex justify-content-center align-items-center m-3">
                                             <a href="<?php echo base_url('Admin/Materi/LatihanSoal/Update/') . $item->id_soal ?>" class="btn btn-info fas fa-pencil m-1" style="border-radius: 8px;"></a>
+                                            <a href="<?php echo base_url('Admin/Materi/LatihanSoal/Page/ViewSoal/') . $item->id_soal ?>" class="btn btn-info fas fa-eye m-1" style="border-radius: 8px;"></a>
                                             <a href="<?php echo base_url('Admin/Materi/LatihanSoal/Delete/Process/') . $item->id_soal ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="btn btn-info fas fa-trash m-1" style="border-radius: 8px;"></a>
                                         </div>
                                     </div>
