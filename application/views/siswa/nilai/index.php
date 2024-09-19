@@ -44,7 +44,7 @@
                 <div style="margin-top: 2rem;height: 60vh;">
                     <table class="table table-bordered">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th style="background-color: #D9D9D9;">Nama Siswa</th>
                                 <th style="background-color: #D9D9D9;">Pertemuan 1</th>
                                 <th style="background-color: #D9D9D9;">Pertemuan 2</th>
@@ -61,7 +61,7 @@
                         </thead>
                         <tbody>
                             <?php foreach ($data as $item) : ?>
-                                <tr>
+                                <tr class="text-center">
                                     <td><?= $item['nama']; ?></td>
                                     <td><?= $item['bab_1']; ?></td>
                                     <td><?= $item['bab_2']; ?></td>
@@ -73,6 +73,7 @@
                                     <td><?= $item['bab_8']; ?></td>
                                     <td><?= $item['bab_9']; ?></td>
                                     <td><?= $item['bab_10']; ?></td>
+
                                     <td><?= number_format($item['rata_rata']); ?></td>
                                 </tr>
                             <?php endforeach; ?>

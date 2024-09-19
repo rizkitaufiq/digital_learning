@@ -1,10 +1,10 @@
-<div class="col-md-12 d-flex justify-content-center align-items-center text-center">
+<div class="col-md-12 d-flex justify-content-center align-items-center text-center mt-4">
     <h2>Nilai Siswa</h2>
 </div>
 
 <table class="table table-bordered">
     <thead>
-        <tr>
+        <tr class="text-center">
             <th style="background-color: #D9D9D9;">Nomor</th>
             <th style="background-color: #D9D9D9;">Nama Siswa</th>
             <th style="background-color: #D9D9D9;">Pertemuan 1</th>
@@ -25,7 +25,7 @@
         $no = $this->uri->segment(4) ? $this->uri->segment(4) + 1 : 1;
         ?>
         <?php foreach ($data as $item) : ?>
-            <tr>
+            <tr class="text-center">
                 <td><?= $no++; ?></td>
                 <td><?= $item['nama']; ?></td>
                 <td><?= $item['bab_1']; ?></td>

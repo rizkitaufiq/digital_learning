@@ -1,11 +1,11 @@
-<div class="col-md-12 d-flex justify-content-center align-items-center text-center">
+<div class="col-md-12 d-flex justify-content-center align-items-center text-center mt-4">
     <h2>Daftar Siswa</h2>
 </div>
 <a href="<?= site_url('Admin/Siswa/Add') ?>" class="btn btn-info d-flex align-items-center justify-content-center text-center m-2" style="border-radius: 24px; width:25vh;height:7vh;font-weight:bold;">+ Tambah Siswa</a>
 <input type="text" id="search" class="form-control mb-3" style="border: 1px solid #D9D9D9" placeholder="Search...">
 <table class="table table-bordered">
     <thead>
-        <tr>
+        <tr class="text-center">
             <th style="background-color: #D9D9D9;">Nomor</th>
             <th style="background-color: #D9D9D9;">Nama Siswa</th>
             <th style="background-color: #D9D9D9;">NISN</th>
@@ -51,7 +51,7 @@
                     let html = '';
 
                     for (let i = 0; i < data.data.length; i++) {
-                        html += '<tr>';
+                        html += '<tr class="text-center">';
                         html += '<td>' + (start + i + 1) + '</td>';
                         html += '<td>' + data.data[i].nama + '</td>';
                         html += '<td>' + data.data[i].nisn + '</td>';
