@@ -31,7 +31,7 @@
         }
 
         .color-2 {
-            background-color: #FBF6CF;
+            background-color: #E2D346;
         }
 
         .color-3 {
@@ -68,43 +68,71 @@
     </style>
 </head>
 
-<body>
+<body class="bg-yellow">
     <div class="container">
-        <div class="text-dark">
-            <div class="mt-2">
+        <div class=" text-dark">
+
+            <div class="d-flex column mt-2">
+                <div class="m-1">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="m-1">
+                    <p>Latihan Soal</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="d-flex justify-content-start align-items-start">
+                    <div class="mt-1" style="margin-left: 1rem;">
+                        <a href="<?= site_url('Siswa/Materi/Page') ?>" style="text-decoration:none;color: black;">Materi</a>
+                    </div>
+
+                    <div class="mt-1" style="margin-left: 1rem;">
+                        <a href="" style="text-decoration:none; border-bottom:2px solid black; background-color: transparent;color: black;">Latihan Soal</a>
+                    </div>
+                </div>
+                <div class="mx-auto" style="border-top: 1px solid black;width:96%;"></div>
+
+                <?php
+                $data_materi = [];
+
+                $colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7', 'color-8', 'color-9', 'color-10'];
+                $color_index = 0;
+
+                $images = ['word.png', 'pc.png', 'laptop.png', 'mouse.png', 'paper.png', 'keyboard.png', 'list.png', 'abc.png', 'globe.png', 'gmail.png',];
+                $image_index = 0;
+
+                ?>
                 <div class="row">
-                    <div class="d-flex justify-content-start align-items-start">
-                        <div class="mt-4" style="margin-left: 1rem;">
-                            <a href="<?= site_url('Siswa/Materi/Page') ?>" style="text-decoration:none;color: black;">Materi</a>
-                        </div>
+                    <?php foreach ($data as $item) { ?>
+                        <div class="col-sm-6 col-md-2 m-3">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="<?php echo base_url('Siswa/Materi/LatihanSoal/Soal/') . $item->id_bab ?>" class="box-bab <?php echo $colors[$color_index++]; ?> d-flex" style="border-radius: 10px; width:120px;height:130px;">
+                                    <div class="d-flex row">
+                                        <div class="d-flex justify-content-center text-center">
+                                            <div class="row mt-3">
+                                                <div class="d-flex justify-content-center align-items-center" style="height: 50px;">
+                                                    <img src="<?php echo base_url('assets/image/siswa/') . $images[$image_index++] ?>" alt="image" style="width: 65px">
+                                                </div>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <p class="mb-4 mt-3"><?php echo $item->bab ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                        <div class="mt-4" style="margin-left: 1rem;">
-                            <a href="" style="text-decoration:none; border-bottom:2px solid black; background-color: transparent;color: black;">Latihan Soal</a>
-                        </div>
-                    </div>
-                    <div class="mx-auto" style="border-top: 1px solid black;width:96%;"></div>
+                                    </div>
+                                </a>
 
-                    <?php
-                    $data_materi = [];
-
-                    $colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7', 'color-8', 'color-9', 'color-10'];
-                    $color_index = 0;
-
-                    ?>
-                    <div class="row">
-                        <?php foreach ($data as $item) { ?>
-                            <div class="col-4 mt-4">
-                                <div class="m-2">
-                                    <a href="<?php echo base_url('Siswa/Materi/LatihanSoal/Soal/') . $item->id_bab ?>" class="btn <?php echo $colors[$color_index++]; ?> d-flex justify-content-center align-items-center text-center w-100" style="height:10vh;border-radius:10px;"><?php echo $item->bab ?></a>
-                                </div>
                             </div>
-                        <?php } ?>
-                    </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <!-- <a href="<?php echo base_url('Siswa/Materi/LatihanSoal/Soal/') . $item->id_bab ?>" class="box-bab <?php echo $colors[$color_index++]; ?>" style="height:10vh;border-radius:10px;"> -->
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

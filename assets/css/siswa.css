@@ -75,6 +75,14 @@ input:disabled {
     text-align: center;
 }
 
+.box-bab {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    padding: 10px;
+    display: flex;
+}
+
 .box-icon {
     border: 1px solid white;
     padding: 2px;

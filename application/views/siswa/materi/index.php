@@ -31,7 +31,7 @@
         }
 
         .color-2 {
-            background-color: #FBF6CF;
+            background-color: #E2D346;
         }
 
         .color-3 {
@@ -68,55 +68,80 @@
     </style>
 </head>
 
-<body>
+<body class="bg-yellow">
     <div class="container">
         <div class="text-dark">
-            <div class="mt-2">
+
+            <div class="d-flex column mt-2">
+                <div class="m-1">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="m-1">
+                    <p>Materi Teks</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="d-flex justify-content-start align-items-start">
+                    <div class="mt-1" style="margin-left: 1rem;">
+                        <a style="border-bottom:2px solid black; background-color: transparent;">Materi</a>
+                    </div>
+
+                    <div class="mt-1" style="margin-left: 1rem;">
+                        <a href="<?= site_url('Siswa/Materi/LatihanSoal') ?>" style="text-decoration:none;color: black;">Latihan Soal</a>
+                    </div>
+                </div>
+                <div class="mx-auto" style="border-top: 1px solid black;width:96%;"></div>
+
+                <?php
+                $data_materi = [];
+
+                foreach ($data as $item) {
+                    $data_materi[$item->bab][] = [
+                        'judul' => $item->judul,
+                        'id_materi' => $item->id_materi,
+                    ];
+                }
+
+                $colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7', 'color-8', 'color-9', 'color-10'];
+                $color_index = 0;
+
+                $images = ['word.png', 'pc.png', 'laptop.png', 'mouse.png', 'paper.png', 'keyboard.png', 'list.png', 'abc.png', 'globe.png', 'gmail.png',];
+                $image_index = 0;
+
+                ?>
                 <div class="row">
-                    <div class="d-flex justify-content-start align-items-start">
-                        <div class="mt-4" style="margin-left: 1rem;">
-                            <a style="border-bottom:2px solid black; background-color: transparent;">Materi</a>
-                        </div>
+                    <?php foreach ($data_materi as $bab => $materis) { ?>
+                        <div class="col-sm-6 col-md-2 m-3">
+                            <div class="d-flex justify-content-center align-items-center" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
+                                <a class="box-bab <?php echo $colors[$color_index++]; ?> d-flex" style="border-radius: 10px; width:120px;height:130px;">
+                                    <div class="d-flex row">
+                                        <div class="d-flex justify-content-end">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-center text-center">
+                                            <div class="row">
+                                                <div class="d-flex justify-content-center align-items-center" style="height: 50px;">
+                                                    <img src="<?php echo base_url('assets/image/siswa/') . $images[$image_index++] ?>" alt="image" style="width: 65px">
+                                                </div>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <p class="mb-4 mt-3"><?php echo $bab ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                        <div class="mt-4" style="margin-left: 1rem;">
-                            <a href="<?= site_url('Siswa/Materi/LatihanSoal') ?>" style="text-decoration:none;color: black;">Latihan Soal</a>
-                        </div>
-                    </div>
-                    <div class="mx-auto" style="border-top: 1px solid black;width:96%;"></div>
+                                    </div>
+                                </a>
 
-                    <?php
-                    $data_materi = [];
-
-                    foreach ($data as $item) {
-                        $data_materi[$item->bab][] = [
-                            'judul' => $item->judul,
-                            'id_materi' => $item->id_materi,
-                        ];
-                    }
-
-                    $colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7', 'color-8', 'color-9', 'color-10'];
-                    $color_index = 0;
-
-                    ?>
-                    <div class="row m-1">
-                        <?php foreach ($data_materi as $bab => $materis) { ?>
-                            <div class="col-sm-6 col-md-4 mt-4">
-                                <div class="d-flex justify-content-start align-items-start" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
-                                    <a class="btn <?php echo $colors[$color_index++]; ?> d-flex justify-content-between align-items-center w-100" style="border-radius: 25px;">
-                                        <?php echo $bab ?>
-                                        <i class="fas fa-chevron-down"></i>
-                                    </a>
-
-                                </div>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top:1px;width: 30%;">
-                                    <?php foreach ($materis as $materi) { ?>
-                                        <a href="<?php echo base_url('Siswa/Materi/Detail/') . $materi['id_materi'] ?>" class="dropdown-item"><?php echo $materi['judul'] ?></a>
-                                    <?php } ?>
-                                </div>
                             </div>
-                        <?php } ?>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top:1px;width: 30%;">
+                                <?php foreach ($materis as $materi) { ?>
+                                    <a href="<?php echo base_url('Siswa/Materi/Detail/') . $materi['id_materi'] ?>" class="dropdown-item"><?php echo $materi['judul'] ?></a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    <?php } ?>
 
-                    </div>
                 </div>
             </div>
 
