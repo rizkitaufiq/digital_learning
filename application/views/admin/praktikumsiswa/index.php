@@ -7,6 +7,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
+                <th style="background-color: #D9D9D9;">Nomor</th>
                 <th style="background-color: #D9D9D9;">Nama Siswa</th>
                 <th style="background-color: #D9D9D9;">Kelas</th>
                 <th style="background-color: #D9D9D9;">Praktikum 1</th>
@@ -75,6 +76,7 @@
                     let html = '';
                     for (let i = 0; i < data.data.length; i++) {
                         html += '<tr>';
+                        html += '<td>' + (start + i + 1) + '</td>';
                         html += '<td>' + data.data[i].nama + '</td>';
                         html += '<td>' + data.data[i].kelas + '</td>';
                         html += '<td>' + data.data[i].praktikum + '</td>';

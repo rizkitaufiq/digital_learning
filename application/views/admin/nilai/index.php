@@ -5,6 +5,7 @@
 <table class="table table-bordered">
     <thead>
         <tr>
+            <th style="background-color: #D9D9D9;">Nomor</th>
             <th style="background-color: #D9D9D9;">Nama Siswa</th>
             <th style="background-color: #D9D9D9;">Pertemuan 1</th>
             <th style="background-color: #D9D9D9;">Pertemuan 2</th>
@@ -20,8 +21,12 @@
         </tr>
     </thead>
     <tbody>
+        <?php
+        $no = $this->uri->segment(4) ? $this->uri->segment(4) + 1 : 1;
+        ?>
         <?php foreach ($data as $item) : ?>
             <tr>
+                <td><?= $no++; ?></td>
                 <td><?= $item['nama']; ?></td>
                 <td><?= $item['bab_1']; ?></td>
                 <td><?= $item['bab_2']; ?></td>
