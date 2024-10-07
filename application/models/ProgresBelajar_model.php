@@ -23,7 +23,7 @@ class ProgresBelajar_model extends CI_Model
                           (SUM(CASE WHEN bab.id_bab = 8 THEN progres_belajar.persentase ELSE 0 END)) as bab_8,
                           (SUM(CASE WHEN bab.id_bab = 9 THEN progres_belajar.persentase ELSE 0 END)) as bab_9,
                           (SUM(CASE WHEN bab.id_bab = 10 THEN progres_belajar.persentase ELSE 0 END)) as bab_10,
-                          (SUM(progres_belajar.persentase) / COUNT(DISTINCT progres_belajar.bab_id) / 10) as rata_rata
+                          (SUM(progres_belajar.persentase) / COUNT(DISTINCT progres_belajar.siswa_id) / 10) as rata_rata
         ');
         $this->db->from('progres_belajar');
         $this->db->join('bab', 'progres_belajar.bab_id = bab.id_bab');

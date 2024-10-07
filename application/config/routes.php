@@ -21,6 +21,10 @@ $route['Admin/Materi/MateriTeks/MateriBab'] = 'Admin/Materi/Materiteks/MateriBab
 $route['Admin/Materi/LatihanSoal/Page/(:num)'] = 'Admin/Materi/LatihanSoal/Page/index/$1';
 $route['Admin/Materi/LatihanSoal/Update/(:num)'] = 'Admin/Materi/LatihanSoal/Update/index/$1';
 
+// Materi Video---------------------------------------------------------------------------------------------------
+$route['Admin/MateriVideo/Page/(:num)'] = 'Admin/MateriVideo/Page/index/$1';
+$route['Admin/MateriVideo/Page/(:num)/(:num)'] = 'Admin/MateriVideo/Page/index/$1/$1';
+
 // Progres---------------------------------------------------------------------------------------------------
 $route['Admin/ProgresBelajar/Detail/(:num)'] = 'Admin/ProgresBelajar/Detail/index/$1';
 

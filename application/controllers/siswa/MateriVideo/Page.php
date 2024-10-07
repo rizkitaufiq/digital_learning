@@ -12,7 +12,7 @@ class Page extends CI_Controller
     public function index()
     {
         $start                    = $this->uri->segment(4);
-        $limit                    = 5;
+        $limit                    = 10;
 
         $config['full_tag_open'] = '<div class="pagination mt-2">';
         $config['full_tag_close'] = '</div>';

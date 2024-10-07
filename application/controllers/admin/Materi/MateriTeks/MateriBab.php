@@ -1,18 +1,20 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class MateriBab extends CI_Controller {
+class MateriBab extends CI_Controller
+{
 
-	public function __construct() {
-        parent::__construct();
-        $this->load->model('Bab_model');
-		$this->load->model('MateriTeks_model');
-    }
-
-    public function index($id_bab)
+	public function __construct()
 	{
-        $start					= $this->uri->segment(6);
-        $limit                  = 5;
+		parent::__construct();
+		$this->load->model('Bab_model');
+		$this->load->model('MateriTeks_model');
+	}
+
+	public function index($id_bab)
+	{
+		$start					= $this->uri->segment(6);
+		$limit                  = 5;
 
 		$config['full_tag_open'] = '<div class="pagination mt-2">';
 		$config['full_tag_close'] = '</div>';
@@ -45,16 +47,39 @@ class MateriBab extends CI_Controller {
 		$config['per_page']		= $limit;
 
 		$param['data']			= $this->MateriTeks_model->Get_Materi_ID($id_bab, $config['per_page'], $start)->result();
-        $param['data_bab']      = $this->Bab_model->Get_Bab_ID($id_bab)->result();
-		
+		$param['data_bab']      = $this->Bab_model->Get_Bab_ID($id_bab)->result();
+
 
 		$this->pagination->initialize($config);
 		$param['links']			= $this->pagination->create_links();
 
 		if ($this->session->userdata('role') != 'admin') {
-            redirect('login');
-        }
+			redirect('login');
+		}
 		$this->load->view('admin/body/header');
 		$this->load->view('admin/materi/materiteks/materi_bab', $param);
+	}
+
+	public function ViewPDF($id_materi)
+	{
+		$data     = $this->MateriTeks_model->Get_MateriTeks_ID($id_materi)->result();
+
+		foreach ($data as $file) {
+
+			$file_materi = $file->isi;
 		}
+
+		$file_path = 'upload/materi/teks/' . $file_materi;
+
+		if (file_exists($file_path)) {
+			header('Content-Type: application/pdf');
+			header('Content-Disposition: inline; filename="' . $file_materi . '"');
+			header('Content-Transfer-Encoding: binary');
+			header('Accept-Ranges: bytes');
+
+			readfile($file_path);
+		} else {
+			echo "File not found!";
+		}
+	}
 }

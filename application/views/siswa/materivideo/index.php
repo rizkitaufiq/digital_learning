@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Siswa | Soal </title>
+    <title>Siswa | Materi Video </title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/blog/">
 
@@ -76,6 +76,9 @@
         $colors = ['color-1', 'color-2', 'color-3', 'color-4', 'color-5', 'color-6', 'color-7', 'color-8', 'color-9', 'color-10'];
         $color_index = 0;
 
+        $images = ['word.png', 'pc.png', 'laptop.png', 'mouse.png', 'paper.png', 'keyboard.png', 'list.png', 'abc.png', 'globe.png', 'gmail.png'];
+        $image_index = 0;
+
         ?>
         <div class="text-dark">
             <div class="container mt-4 bg-yellow" style="border-radius:25px;border:1px solid black;">
@@ -95,13 +98,14 @@
 
                     <div class="row d-flex">
                         <?php foreach ($data as $item) { ?>
-                            <div class="col-md-3 d-flex align-items-stretch">
+                            <div class="col-sm-6 col-md-2 m-3">
                                 <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div class="<?php echo $colors[$color_index++]; ?> d-flex justify-content-center align-items-center text-center w-75 mb-5" style="border-radius: 25px;">
+                                    <div class="<?php echo $colors[$color_index++]; ?> d-flex justify-content-center align-items-center text-center w-full mb-5" style="border-radius: 25px;">
                                         <p class="m-1"><?php echo $item->judul ?></p>
                                     </div>
                                     <div>
-                                        <a class="mt-2" href="<?php echo base_url('Siswa/MateriVideo/Detail/') . $item->id_video ?>" id="MateriVideo"><img src="<?= base_url('assets/image/siswa/video.png') ?>"></a>
+                                        <a class="mt-2" href="<?php echo base_url('Siswa/MateriVideo/Detail/') . $item->id_video ?>" id="MateriVideo">
+                                            <img src="<?= base_url('assets/image/siswa/') . $images[$image_index++]; ?>" width="150px"></a>
                                     </div>
                                 </div>
                             </div>

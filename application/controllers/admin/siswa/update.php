@@ -40,9 +40,9 @@ class Update extends CI_Controller
 
         $alamat          = $this->input->post('alamat');
 
-        $username          = $this->input->post('username');
+        // $username          = $this->input->post('username');
 
-        $password          = $this->input->post('password');
+        // $password          = $this->input->post('password');
 
 
         $data = array(
@@ -63,9 +63,9 @@ class Update extends CI_Controller
 
             "alamat"        => $alamat,
 
-            "username"      => $username,
+            // "username"      => $username,
 
-            "password"      => $password,
+            // "password"      => $password,
         );
 
         $this->db->where('id_siswa', $id_siswa);

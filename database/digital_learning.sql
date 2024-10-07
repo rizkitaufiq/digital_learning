@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Sep 2024 pada 10.26
+-- Waktu pembuatan: 19 Sep 2024 pada 20.38
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -95,7 +95,11 @@ INSERT INTO `latihan_soal` (`id_soal`, `soal`, `opsi_a`, `opsi_b`, `opsi_c`, `op
 (3, 'Example 2', 'Example 2', 'Example 2 ', 'Example 2', 'Example 2', 'c', 'center', 1),
 (4, 'Example 123', 'Example 123', 'Example 123', 'Example 123', 'Example 123', 'a', 'left', 1),
 (5, 'Example 12355', 'Example 1235', 'Example 12355', 'Example 12355', 'Example 123444', 'c', 'left', 1),
-(6, 'Example 555', 'Example 555', 'Example 555', 'Example 555', 'Example 555', 'd', 'center', 1);
+(6, 'Example 555', 'Example 555', 'Example 555', 'Example 555', 'Example 555', 'd', 'center', 1),
+(8, 'Soal bab 2', 'Soal bab 2 a', 'Soal bab 2 b', 'Soal bab 2 c', 'Soal bab 2 d', 'a', 'left', 2),
+(11, 'Soal Bab 4', 'Soal Bab 4', 'Soal Bab 4', 'Soal Bab 4', 'Soal Bab 4', 'd', 'left', 4),
+(13, 'Soal Bab 5', 'Soal Bab 5', 'Soal Bab 5', 'Soal Bab 5', 'Soal Bab 5', 'd', 'left', 5),
+(18, 'Soal Bab 6 part 1', 'Soal Bab 6', 'Soal Bab 6', 'Soal Bab 6', 'Soal Bab 6', 'd', 'left', 6);
 
 -- --------------------------------------------------------
 
@@ -116,15 +120,13 @@ CREATE TABLE `materi_teks` (
 --
 
 INSERT INTO `materi_teks` (`id_materi`, `judul`, `isi`, `penjelasan`, `bab_id`) VALUES
-(1, 'Aplikasi Pengolah Kata', 'Mengenal aplikasi pengolah kata berdasarkan contohnya', 'Mengenal aplikasi pengolah kata berdasarkan contohnya', 1),
-(2, 'Aplikasi Pengolah Angka ', 'Mengenal Aplikasi Pengolah Angka beserta contoh aplikasi yang digunakan dalam kehidupan sehari-hari', 'Mengenal Aplikasi Pengolah Angka beserta contoh aplikasi yang digunakan', 1),
-(8, 'Microsoft Excel 2007', 'Mengenal menu pada Microsoft Excel', 'Mengenal menu pada Microsoft Excel', 2),
-(9, 'Toolbar', 'Mengenal toolbar standar', 'Mengenal toolbar standar', 3),
-(10, 'Aplikasi Pengolah Angka ch 1', 'Mengenal menu pada aplikasi pengolah angka', 'Mengenal menu pada aplikasi pengolah angka', 1),
-(11, 'Materi A', 'Materi A', 'Materi A', 1),
-(12, 'Materi B', 'Materi B', 'Materi B', 1),
-(13, 'Materi C', 'Materi C', 'Materi C', 1),
-(15, 'Aplikasi editor', 'Aplikasi editor', 'Aplikasi editor', 4);
+(1, 'Aplikasi Pengolah Kata part 1', 'TIK_Kelas_8__Bab_2__Menggunakan_Menu_dan_Ikon_pada_Microsoft_Word_2007.pdf', 'Aplikasi Pengolah Kata', 1),
+(3, 'Aplikasi Pengolah Angka', 'TIK_Kelas_8__Bab_4__Mengenal_Fungsi_Menu_dan_Ikon_pada_Pengolah_Angka.pdf', 'Aplikasi Pengolah Angka', 2),
+(4, 'Materi Bab 3', 'TIK_Kelas_7__Bab_3__Peran_dan_Dampak_TIK.pdf', 'Materi Bab 3', 3),
+(5, 'Materi Bab 4', 'TIK_Kelas_7__Bab_4__Sistem_Operasi_Windows_XP.pdf', 'Materi Bab 4', 4),
+(6, 'Materi Bab 5', 'TIK_Kelas_7__Bab_5__Perangkat_Keras_(Hardware)_Komputer.pdf', 'Materi Bab 5', 5),
+(7, 'Materi Bab 6', 'TIK_Kelas_7__Bab_6__Perangkat_Lunak_(Software)_Komputer.pdf', 'Materi Bab 6', 6),
+(8, 'Aplikasi Pengolah Kata part 2', 'TIK_Kelas_7__Bab_2__Sejarah_Perkembangan_TIK.pdf', 'Aplikasi Pengolah Kata part 2', 1);
 
 -- --------------------------------------------------------
 
@@ -145,7 +147,8 @@ CREATE TABLE `materi_video` (
 INSERT INTO `materi_video` (`id_video`, `judul`, `file_video`) VALUES
 (9, 'Aplikasi Pengolah Angka', 'videoplayback.mp4'),
 (10, 'Pengenalan Menu Excel', 'Perilaku_Pengguna_Internet_di_Indonesia_-_Hari_Media_Sosial_(1).mp4'),
-(11, 'Aplikasi Pengolah Kata dan implementasinya', 'Animasi_Motion_Graphic_Iklan_Layanan_Masyarakat-_Waspada_Hoax.mp4');
+(11, 'Aplikasi Pengolah Kata dan implementasinya', 'Animasi_Motion_Graphic_Iklan_Layanan_Masyarakat-_Waspada_Hoax.mp4'),
+(17, 'pengolah kata part 1', 'Cara_slow_motion_atau_speed_motion_video_menggunakan_wondershare_filmora.mp4');
 
 -- --------------------------------------------------------
 
@@ -168,7 +171,10 @@ CREATE TABLE `nilai_latihan_soal` (
 INSERT INTO `nilai_latihan_soal` (`id_nilai`, `siswa_id`, `bab_id`, `skor`, `status_tes`) VALUES
 (1, 1, 1, 3, 2),
 (2, 2, 1, 3, 2),
-(3, 3, 1, 3, 2);
+(4, 10, 1, 1, 2),
+(6, 11, 1, 2, 2),
+(7, 13, 1, 1, 2),
+(8, 8, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -188,7 +194,8 @@ CREATE TABLE `praktikum` (
 
 INSERT INTO `praktikum` (`id_praktikum`, `praktikum`, `soal`) VALUES
 (6, '1', ' Buatlah Makalah dengan m.word'),
-(7, '2', ' Buatlah absensi pada m.excel');
+(7, '2', ' Buatlah absensi pada m.excel'),
+(8, '3', ' Buatlah desain logo dengan corel draw');
 
 -- --------------------------------------------------------
 
@@ -223,7 +230,14 @@ INSERT INTO `praktikum_siswa` (`id_praktikum_siswa`, `tanggal`, `waktu`, `file_p
 (24, '0000-00-00', '00:00:00', '', 8, 7),
 (25, '0000-00-00', '00:00:00', '', 9, 7),
 (26, '0000-00-00', '00:00:00', '', 10, 7),
-(27, '0000-00-00', '00:00:00', '', 11, 7);
+(27, '0000-00-00', '00:00:00', '', 11, 7),
+(28, '0000-00-00', '00:00:00', '', 1, 8),
+(29, '0000-00-00', '00:00:00', '', 2, 8),
+(30, '0000-00-00', '00:00:00', '', 3, 8),
+(31, '0000-00-00', '00:00:00', '', 8, 8),
+(32, '0000-00-00', '00:00:00', '', 9, 8),
+(33, '0000-00-00', '00:00:00', '', 10, 8),
+(34, '0000-00-00', '00:00:00', '', 11, 8);
 
 -- --------------------------------------------------------
 
@@ -246,13 +260,9 @@ CREATE TABLE `progres_belajar` (
 --
 
 INSERT INTO `progres_belajar` (`id_progres_belajar`, `tanggal`, `waktu`, `persentase`, `siswa_id`, `materi_id`, `bab_id`) VALUES
-(11, '2024-08-28', '19:36:12', 10, 1, 1, 1),
-(12, '2024-08-28', '19:36:22', 10, 1, 2, 1),
-(13, '2024-08-28', '19:37:32', 10, 1, 10, 1),
-(14, '2024-08-28', '19:53:36', 10, 2, 1, 1),
-(15, '2024-08-28', '21:55:38', 10, 1, 8, 2),
-(24, '2024-08-29', '11:17:04', 10, 2, 2, 1),
-(27, '2024-08-29', '19:06:09', 10, 1, 11, 1);
+(1, '2024-09-11', '23:17:29', 10, 1, 1, 1),
+(2, '2024-09-12', '00:16:44', 10, 2, 3, 2),
+(3, '2024-09-19', '15:50:04', 10, 1, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -282,11 +292,11 @@ CREATE TABLE `siswa` (
 INSERT INTO `siswa` (`id_siswa`, `username`, `password`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `nisn`, `alamat`, `nama_ortu`, `kelas`) VALUES
 (1, 'sonia', '1234', 'sonia', 'bomberay', '2003-08-22', 'p', 'islam', 1573488, 'jl. kapten', '', '4a'),
 (2, 'angela', '1234', 'angela', 'fakfak', '2003-10-26', 'p', 'kristen pr', 2345677, 'jl. brigje', '', '4c'),
-(3, 'example 445', '12345678', 'example 4455', 'example 44', '2003-02-16', 'P', 'kristen', 12322222452, 'example 4455', '', '5C'),
 (8, 'example 42426', '123467789999', 'example 42424', 'papua', '2024-07-03', 'l', 'islam', 11113, 'Papua', 'pppp', '4c'),
-(9, 'example 42424', '123467789999', 'example 42424', 'papua', '2024-07-03', 'l', 'islam', 111141, 'Papua', 'pppp', '4c'),
 (10, 'contoh22', '22222224444444444', 'contoh243', 'contoh242', '2024-08-10', 'L', 'kristen', 2424121111, 'contoh22', '', '5C'),
-(11, 'contoh12', '24242222', 'contoh12', 'examplec1', '2024-08-10', 'P', 'kristen', 2222444444444, 'contoh12', '', '5c');
+(11, 'contoh12', '24242222', 'contoh12', 'examplec1', '2024-08-10', 'P', 'kristen', 2222444444444, 'contoh12', '', '5c'),
+(13, 'contoh', '12345678', 'contoh', 'contoh', '2024-09-11', 'L', 'islam', 111222, 'contoh', '', '5c'),
+(15, 'abcd12345678', 'abcd12345678', 'abcdef', 'abcd', '2024-09-11', 'L', 'islam', 242211122, 'abcd', '', '5b');
 
 --
 -- Indexes for dumped tables
@@ -372,49 +382,49 @@ ALTER TABLE `bab`
 -- AUTO_INCREMENT untuk tabel `latihan_soal`
 --
 ALTER TABLE `latihan_soal`
-  MODIFY `id_soal` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_soal` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `materi_teks`
 --
 ALTER TABLE `materi_teks`
-  MODIFY `id_materi` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_materi` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `materi_video`
 --
 ALTER TABLE `materi_video`
-  MODIFY `id_video` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_video` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `nilai_latihan_soal`
 --
 ALTER TABLE `nilai_latihan_soal`
-  MODIFY `id_nilai` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_nilai` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `praktikum`
 --
 ALTER TABLE `praktikum`
-  MODIFY `id_praktikum` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_praktikum` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `praktikum_siswa`
 --
 ALTER TABLE `praktikum_siswa`
-  MODIFY `id_praktikum_siswa` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_praktikum_siswa` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `progres_belajar`
 --
 ALTER TABLE `progres_belajar`
-  MODIFY `id_progres_belajar` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_progres_belajar` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_siswa` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

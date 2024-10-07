@@ -13,7 +13,7 @@ class Page extends CI_Controller
 	public function index()
 	{
 		$start					= $this->uri->segment(4);
-		$limit                  = 5;
+		$limit                  = 10;
 
 		$config['full_tag_open'] = '<div class="pagination mt-2">';
 		$config['full_tag_close'] = '</div>';
@@ -55,5 +55,27 @@ class Page extends CI_Controller
 		}
 		$this->load->view('admin/body/header');
 		$this->load->view('admin/materivideo/index', $param);
+	}
+
+	public function ViewVideo($id_video)
+	{
+		$data     = $this->MateriVideo_model->Get_MateriVideo_ID($id_video)->result();
+
+		foreach ($data as $file) {
+
+			$file_video = $file->file_video;
+		}
+
+		$file_path = FCPATH . 'upload/materi/video/' . $file_video;
+
+		if (file_exists($file_path)) {
+			header('Content-Type: video/mp4');
+			header('Content-Length: ' . filesize($file_path));
+			header('Accept-Ranges: bytes');
+
+			readfile($file_path);
+		} else {
+			echo "File not found!";
+		}
 	}
 }

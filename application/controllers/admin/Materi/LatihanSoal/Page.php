@@ -56,4 +56,15 @@ class Page extends CI_Controller
 		$this->load->view('admin/body/header');
 		$this->load->view('admin/materi/latihansoal/index', $param);
 	}
+
+	public function ViewSoal($id_soal)
+	{
+
+		$param['data']    = $this->LatihanSoal_model->Get_LatihanSoal_ID($id_soal)->result();
+
+		if ($this->session->userdata('role') != 'admin') {
+			redirect('login');
+		}
+		$this->load->view('admin/materi/latihansoal/viewsoal', $param);
+	}
 }

@@ -80,10 +80,9 @@
                         </tbody>
                     </table>
 
-                    <?php if (isset($links)) { ?>
+                    <!-- <?php if (isset($links)) { ?>
                         <?php echo $links ?>
-                    <?php } ?>
-                    </p>
+                    <?php } ?> -->
                 </div>
 
 

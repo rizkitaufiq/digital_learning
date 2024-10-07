@@ -126,6 +126,10 @@
                             </div>
                         </div>
                     <?php } ?>
+
+                    <div class="form-group d-flex justify-content-end align-item-center mt-5" style="height: 20vh;">
+                        <a href="<?= site_url('Siswa/Beranda/Page') ?>" class="btn btn-secondary mt-4 btn-custom" style="border-radius: 10px; height:7vh">Kembali</a>
+                    </div>
                 </div>
             </div>
 
