@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Sep 2024 pada 20.38
+-- Waktu pembuatan: 07 Okt 2024 pada 08.32
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -126,7 +126,8 @@ INSERT INTO `materi_teks` (`id_materi`, `judul`, `isi`, `penjelasan`, `bab_id`) 
 (5, 'Materi Bab 4', 'TIK_Kelas_7__Bab_4__Sistem_Operasi_Windows_XP.pdf', 'Materi Bab 4', 4),
 (6, 'Materi Bab 5', 'TIK_Kelas_7__Bab_5__Perangkat_Keras_(Hardware)_Komputer.pdf', 'Materi Bab 5', 5),
 (7, 'Materi Bab 6', 'TIK_Kelas_7__Bab_6__Perangkat_Lunak_(Software)_Komputer.pdf', 'Materi Bab 6', 6),
-(8, 'Aplikasi Pengolah Kata part 2', 'TIK_Kelas_7__Bab_2__Sejarah_Perkembangan_TIK.pdf', 'Aplikasi Pengolah Kata part 2', 1);
+(8, 'Aplikasi Pengolah Kata part 2', 'TIK_Kelas_7__Bab_2__Sejarah_Perkembangan_TIK.pdf', 'Aplikasi Pengolah Kata part 2', 1),
+(9, 'Aplikasi Pengolah Kata part 3', 'TIK_Kelas_7__Bab_3__Peran_dan_Dampak_TIK1.pdf', 'Aplikasi Pengolah Kata part 3', 1);
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,9 @@ INSERT INTO `materi_video` (`id_video`, `judul`, `file_video`) VALUES
 (9, 'Aplikasi Pengolah Angka', 'videoplayback.mp4'),
 (10, 'Pengenalan Menu Excel', 'Perilaku_Pengguna_Internet_di_Indonesia_-_Hari_Media_Sosial_(1).mp4'),
 (11, 'Aplikasi Pengolah Kata dan implementasinya', 'Animasi_Motion_Graphic_Iklan_Layanan_Masyarakat-_Waspada_Hoax.mp4'),
-(17, 'pengolah kata part 1', 'Cara_slow_motion_atau_speed_motion_video_menggunakan_wondershare_filmora.mp4');
+(17, 'pengolah kata part 1', 'Cara_slow_motion_atau_speed_motion_video_menggunakan_wondershare_filmora.mp4'),
+(18, 'Aplikasi Pengolah Kata part 2', 'Cara_slow_motion_atau_speed_motion_video_menggunakan_wondershare_filmora1.mp4'),
+(19, 'Aplikasi Pengolah Kata part 3', 'contoh.mp4');
 
 -- --------------------------------------------------------
 
@@ -262,7 +265,8 @@ CREATE TABLE `progres_belajar` (
 INSERT INTO `progres_belajar` (`id_progres_belajar`, `tanggal`, `waktu`, `persentase`, `siswa_id`, `materi_id`, `bab_id`) VALUES
 (1, '2024-09-11', '23:17:29', 10, 1, 1, 1),
 (2, '2024-09-12', '00:16:44', 10, 2, 3, 2),
-(3, '2024-09-19', '15:50:04', 10, 1, 8, 1);
+(3, '2024-09-19', '15:50:04', 10, 1, 8, 1),
+(4, '2024-09-20', '05:22:31', 10, 1, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -388,13 +392,13 @@ ALTER TABLE `latihan_soal`
 -- AUTO_INCREMENT untuk tabel `materi_teks`
 --
 ALTER TABLE `materi_teks`
-  MODIFY `id_materi` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_materi` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `materi_video`
 --
 ALTER TABLE `materi_video`
-  MODIFY `id_video` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_video` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `nilai_latihan_soal`
@@ -418,7 +422,7 @@ ALTER TABLE `praktikum_siswa`
 -- AUTO_INCREMENT untuk tabel `progres_belajar`
 --
 ALTER TABLE `progres_belajar`
-  MODIFY `id_progres_belajar` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_progres_belajar` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`
